@@ -1,4 +1,4 @@
-
+/* Layout */
 body{
     background-color: #F66B6B;
 }
@@ -12,6 +12,7 @@ body{
     grid-template-rows: repeat(15, 1fr);
 }
 
+/* Colors */
 .cream{
     background-color: #FBFCEA;
 }
@@ -28,6 +29,7 @@ body{
    background-color: #FFE100;
 }
 
+/* Borders */
 .border-right{
     border-right: 20px solid #493D3B;
 }
