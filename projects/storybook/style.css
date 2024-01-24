@@ -1,0 +1,65 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: pink;
+}
+
+.timer-container {
+    text-align: left;
+    margin: 20px;
+}
+
+#timer {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#startBtn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Visuals */
+.box{
+    position: fixed;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    background-color: #262625;
+    cursor: pointer;
+    
+}
+
+.newspaper{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.paper{
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+    transition: top 0.5s ease-in-out;
+}
+
+.rightPage{
+    /* transform: translate(0%, 80%); */
+    background-color: #d7d0d1;
+}
+
+.leftPage{
+    /* transform: translate(-100%, 80%); */
+    background-color: #e9e5e6;
+}
+
+.background{
+
+}
