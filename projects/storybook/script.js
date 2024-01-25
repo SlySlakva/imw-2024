@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('myBox').addEventListener('click', function() {
-      window.location.href = 'box.html';
+        window.location.href = 'decision.html';
     });
-  });
+});
 
   document.addEventListener('DOMContentLoaded', function () {
     let timer;
@@ -39,16 +39,3 @@ document.addEventListener('DOMContentLoaded', function() {
         timerDisplay.textContent = display;
     }
 });
-
- // Function to handle hovering effect
- function handleHover() {
-    var box = document.getElementById('hover-box');
-    box.style.top = '-40px'; // Move the box up
-  }
-
-  // Function to handle when the cursor leaves the box
-  function handleLeave() {
-    var box = document.getElementById('hover-box');
-    box.style.top = '40px'; // Move the box back to its original position
-  }
-

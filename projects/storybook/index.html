@@ -4,25 +4,48 @@
     <head>
         <title>Storyboard</title>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
     </head>
 
     <body>
+        <!-- Background -->
+        <div class="background">
+            <div class="wall"></div>
+            <div class="ground"></div>
+            <div id="myWindow" class="window"></div>
+        </div>
+
+        <!-- Introduction Text -->
+        <div id="first" class="fade-in">This is my box.</div>
+        <div id="second" class="fade-in" style="font-size: 20px;">It's holding something very important.</div>
+        <div id="third" class="fade-in" style="font-size: 20px;">Please watch it for 5 minutes.</div>
+        <div id="four" class="fade-in" style="font-size: 20px; font-weight: bold;">Don't touch it while I'm gone.</div>
+
         <div class="box" id="myBox"></div>
-        <!-- <div id="hover-box" class="newspaper" onmouseover="handleHover()" onmouseout="handleLeave()">
-           <div class="leftPaper"></div>
-           <div class="rightPaper"></div>
-        </div> -->
 
         <div class="newspaper">
-            <div class="paper leftPaper"></div>
-            <div class="paper rightPaper"></div>
+            <div class="cream"></div>
+            <div class="newsText">Current Events</div>
+            <div class="newsText" style="top:10%;">--------------------</div>
+            <div class="newsText" style="top:15%;">--------------------</div>
+            <div class="newsText" style="top:20%;">--------------------</div>
+            <div class="newsText" style="top:25%;">--------------------</div>
+            <div class="newsText" style="top:30%;">--------------------</div>
+            <div class="newsText" style="top:35%;">--------------------</div>
+            <div class="newsText" style="top:40%;">--------------------</div>
+            <div clas="boxText">TOUCH THE BOX</div>
+            <div clas="boxText" style="top:10%;">DO IT DO IT DO IT</div>
+            <div clas="boxText" style="top:15%;">YOU KNOW YOU WANT TO</div>
+            <div clas="boxText" style="top:20%;">OPEN THE BOX</div>
+            <div clas="boxText" style="top:25%;">OPEN IT OPEN IT</div>
+            
         </div>
 
         <div class="timer-container">
             <div id="timer">05:00</div>
             <button id="startBtn">Start Timer</button>
         </div>
+
+        <script src="script.js"></script>
     </body>
     
 </html>

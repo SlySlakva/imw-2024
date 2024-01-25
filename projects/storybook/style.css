@@ -5,7 +5,7 @@ body {
     justify-content: flex-start;
     height: 100vh;
     margin: 0;
-    background-color: pink;
+    background-color: rgb(71, 54, 60);
 }
 
 .timer-container {
@@ -37,29 +37,150 @@ body {
     
 }
 
+/* Hovering newspaper */
 .newspaper{
     position:fixed;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, 40%);
+    background-color: #d7d0d1;
+    display: grid;
+    width: 800px;
+    height: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    transition: transform 750ms;
+    &:hover{
+        transform: translateY(20px);
+    }
+}
+
+.newsText {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size:50px;
+    color: #92898c;
+    opacity:1;
+}
+
+.boxText {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size:50px;
+    color: #92898c;
+    opacity:0;
+}
+
+/* Colors */
+.cream{
+    background-color: #e9e5e6;
+}
+
+/* Background Elements */
+.background{
+
+}
+
+.wall{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 400px;
+    height:400px;
+    background-color: rgb(59, 45, 50);
+}
+
+.ground{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-bottom: 600px solid rgb(87, 67, 73);;
+    border-left: 700px solid transparent;
+    border-right:700px solid transparent;
+    height: 0;
+    width: 400px;
+}
+
+.window{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-370%, -220%);
+    width: 100px;
+    height:100px;
+    background-color: rgb(88, 86, 145);
+}
+
+
+/* Introduction Text Fade Sequence */
+.fade-in{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -650%);
+    opacity: 0;
+    font-size:40px;
+    color: white;
+    animation: fadeIn ease 4s;
+    animation-fill-mode: forwards;
+}
+
+#second{
+    animation-delay: 4s;
+}
+
+#third{
+    animation-delay: 8s;
+}
+
+#four{
+    animation-delay: 12s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+  /* STUFF THAT DIDNT WORK */
+
+  /* .newspaper{
+
 }
 
 .paper{
     width: 400px;
     height: 400px;
     cursor: pointer;
-    transition: top 0.5s ease-in-out;
+    transition: transform 750ms;
+    &:hover{
+        transform: translateY(200px);
+    }
 }
 
 .rightPage{
-    /* transform: translate(0%, 80%); */
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 80%);
     background-color: #d7d0d1;
 }
 
 .leftPage{
-    /* transform: translate(-100%, 80%); */
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, 80%);
     background-color: #e9e5e6;
-}
-
-.background{
-
-}
+} */
