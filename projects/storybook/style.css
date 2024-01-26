@@ -9,18 +9,18 @@ body {
 }
 
 /* Box Elements*/
-.box{
+.box {
     position: fixed;
     top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 200px;
     height: 100px;
     background-color: #600c0c;
     cursor: pointer;
 }
 
-.lid{
+.lid {
     transform: translate(0%, -100%);
     width: 200px;
     height: 10px;
@@ -28,96 +28,93 @@ body {
     cursor: pointer;
 }
 
-.top{
+.top {
     transform: translate(0%, -300%);
     border-bottom: 10px solid rgb(137, 25, 25);
     border-left: 10px solid transparent;
-    border-right:10px solid transparent;
+    border-right: 10px solid transparent;
     height: 0;
     width: 180px;
 }
 
-.shadow{
+.shadow {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 50%);
-    border-bottom: 100px solid rgb(65, 50, 54);;
+    border-bottom: 100px solid rgb(65, 50, 54);
+    ;
     border-left: 80px solid transparent;
-    border-right:80px solid transparent;
+    border-right: 80px solid transparent;
     height: 0;
     width: 200px;
 }
 
 /* Background Elements */
-.background{
+.background {}
 
-}
-
-.wall{
-    position:fixed;
+.wall {
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
     width: 400px;
-    height:400px;
+    height: 400px;
     background-color: rgb(59, 45, 50);
 }
 
-.ground{
+.ground {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
     border-bottom: 600px solid rgb(87, 67, 73);
     border-left: 700px solid transparent;
-    border-right:700px solid transparent;
+    border-right: 700px solid transparent;
     height: 0;
     width: 400px;
 }
 
 /* Window Elements */
-.window{
-}
+.window {}
 
-.frame{    
+.frame {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -180%);
     width: 190px;
-    height:220px;
+    height: 220px;
     background-color: #272b2bbc;
 }
 
-.glass{
+.glass {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -190%);
     width: 180px;
-    height:200px;
+    height: 200px;
     background-color: #94f3fabc;
 }
 
 /* Painting Elements - Features a figure that slowly looks at the box.*/
-.painting{
-    position:fixed;
+.painting {
+    position: fixed;
     top: 40%;
     left: -70%;
     transform: rotate(90deg);
-    border-bottom: 100px solid rgb(151, 138, 142);;
+    border-bottom: 100px solid rgb(151, 138, 142);
+    ;
     border-left: 65px solid transparent;
-    border-right:65px solid transparent;
+    border-right: 65px solid transparent;
     height: 0;
     width: 200px;
 }
 
-.figure{
+.figure {}
 
-}
-
-.head{
+.head {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -128,16 +125,16 @@ body {
     border-radius: 50%;
 }
 
-.body{
+.body {
     transform: translate(88%, 180%);
     border-bottom: 20px solid #8a6953;
     border-left: 13px solid transparent;
-    border-right:13px solid transparent;
+    border-right: 13px solid transparent;
     height: 0;
     width: 100px;
 }
 
-.eye{
+.eye {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -149,7 +146,7 @@ body {
     display: inline-block;
 }
 
-.pupil{
+.pupil {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -160,11 +157,12 @@ body {
     border-radius: 50%;
     display: inline-block;
     animation-name: pupilMove;
-    animation-duration: 120s; /*Makes the pupil shift towards the box*/
+    animation-duration: 120s;
+    /*Makes the pupil shift towards the box*/
     animation-fill-mode: forwards;
 }
 
-.pupil2{
+.pupil2 {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -174,7 +172,8 @@ body {
     background-color: #343131;
     border-radius: 50%;
     display: inline-block;
-    animation-name: pupil2Move; /*Makes the pupil shift towards the box*/
+    animation-name: pupil2Move;
+    /*Makes the pupil shift towards the box*/
     animation-duration: 120s;
     animation-fill-mode: forwards;
 }
@@ -184,7 +183,8 @@ body {
     0% {
         transform: translate(-50%, 370%);
     }
-    100%{
+
+    100% {
         transform: translate(-30%, 340%);
     }
 }
@@ -193,64 +193,72 @@ body {
     0% {
         transform: translate(-50%, 200%);
     }
-    100%{
+
+    100% {
         transform: translate(-30%, 160%);
     }
 }
 
 /* Introduction Text Fade Sequence */
-.fade-in{
+.fade-in {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -650%);
     opacity: 0;
-    font-size:40px;
+    font-size: 40px;
     color: white;
     animation: fadeIn ease 4s;
     animation-fill-mode: forwards;
 }
 
 /* Delay the second line by 4 seconds.  */
-#second{
+#second {
     animation-delay: 4s;
 }
+
 /* Delay the third line by 8 seconds.  */
-#third{
+#third {
     animation-delay: 8s;
 }
+
 /* Delay the fourth line by 12 seconds.  */
-#four{
+#four {
     animation-delay: 12s;
 }
 
 /* Fade text animation */
 @keyframes fadeIn {
     0% {
-        opacity:0;
+        opacity: 0;
     }
-    50%{
-        opacity:1;
+
+    50% {
+        opacity: 1;
     }
+
     100% {
-        opacity:0;
+        opacity: 0;
     }
 }
 
 /* Hovering newspaper */
-.newspaper{
-    position:fixed;
+.newspaper {
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 40%);
     background-color: #d7d0d1;
-    display: grid; /*used the grid system to make two pages*/
+    display: grid;
+    /*used the grid system to make two pages*/
     width: 800px;
     height: 800px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    transition: transform 750ms; /*if user hovers over the element, the element will move up for the user to read.*/
-    &:hover{
+    transition: transform 750ms;
+
+    /*if user hovers over the element, the element will move up for the user to read.*/
+    &:hover {
         transform: translateY(20px);
     }
 }
@@ -260,9 +268,9 @@ body {
     position: absolute;
     top: 5%;
     left: 5%;
-    font-size:50px;
+    font-size: 50px;
     color: #92898c;
-    opacity:1;
+    opacity: 1;
 }
 
 /* The box messages that fade in gradually. */
@@ -270,41 +278,46 @@ body {
     position: absolute;
     top: 5%;
     left: 55%;
-    font-size:35px;
+    font-size: 35px;
     color: #850909bc;
-    opacity:0;
-    animation: message ease 500s; /*Ease in messages over 500 seconds.*/
+    opacity: 0;
+    animation: message ease 500s;
+    /*Ease in messages over 500 seconds.*/
     animation-fill-mode: forwards;
 }
 
 /* Second message is delayed by 20 seconds.  */
-#secondMes{
+#secondMes {
     animation-delay: 20s;
 }
+
 /* third message is delayed by 40 seconds.  */
-#thirdMes{
+#thirdMes {
     animation-delay: 40s;
 }
+
 /* fourth message is delayed by 60 seconds.  */
-#fourMes{
+#fourMes {
     animation-delay: 60s;
 }
 
 /* Fade box messages in sequence.  */
 @keyframes message {
     0% {
-        opacity:0;
+        opacity: 0;
     }
-    50%{
-        opacity:1;
+
+    50% {
+        opacity: 1;
     }
+
     100% {
-        opacity:0;
+        opacity: 0;
     }
 }
 
 /* newspaper color */
-.cream{
+.cream {
     background-color: #e9e5e6;
 }
 
@@ -316,7 +329,7 @@ body {
     transform: translate(-50%, -600%);
     font-size: 24px;
     margin-top: 20px;
-    color:white;
+    color: white;
 }
 
 /* Ending Text */
@@ -335,13 +348,18 @@ body {
 /* Fade in ending text animation */
 @keyframes text {
     0% {
-        opacity: 0; /* Start with opacity 0 */
+        opacity: 0;
+        /* Start with opacity 0 */
     }
+
     90% {
-        opacity: 0; /* Stay invisible for the initial 10% */
+        opacity: 0;
+        /* Stay invisible for the initial 10% */
     }
+
     100% {
-        opacity: 1; /* Gradually fade in to opacity 1 */
+        opacity: 1;
+        /* Gradually fade in to opacity 1 */
     }
 }
 
@@ -352,7 +370,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); 
+    background-color: rgba(0, 0, 0, 0);
     animation: cover 1s ease-in-out 2s forwards;
     animation-delay: 200s;
     pointer-events: none;
@@ -361,12 +379,13 @@ body {
 /* Fade in cover screen animation */
 @keyframes cover {
     0% {
-      background-color: rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0);
     }
+
     100% {
-      background-color: rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255);
     }
-  } 
+}
 
 
 /* STUFF THAT DIDNT WORK */

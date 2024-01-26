@@ -1,8 +1,8 @@
 //Click Function (applied to the box)
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('myBox').addEventListener('click', function() {
-        window.location.href = 'decision.html';
-    });
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('myBox').addEventListener('click', function () {
+    window.location.href = 'decision.html';
+  });
 });
 
 //Timer Function
@@ -12,7 +12,7 @@ function startTimer() {
   var timeLeft = 180; // 3 minutes in seconds
   var timerDisplay = document.getElementById("timer");
 
-  var countdown = setInterval(function() {
+  var countdown = setInterval(function () {
     var minutes = Math.floor(timeLeft / 60);
     var seconds = timeLeft % 60;
 

@@ -1,61 +1,63 @@
-body{
+body {
     background-color: rgb(51, 39, 43);
 }
 
-.text{
+.text {
     position: absolute;
-    left:30%;
+    left: 30%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
     font-weight: bold;
-    color:white;
+    color: white;
 }
 
 /* Box Elements */
-.box{
+.box {
     position: fixed;
     top: 50%;
     left: 50%;
 }
 
-.front{
+.front {
     transform: translate(-50%, 0%);
     width: 600px;
     height: 300px;
     background-color: #600c0c;
 }
 
-.inside{
+.inside {
     transform: translate(-50%, -250%);
     border-bottom: 200px solid #0f0f0f;
     border-left: 100px solid transparent;
-    border-right:100px solid transparent;
+    border-right: 100px solid transparent;
     height: 0;
     width: 400px;
 }
 
-.cap{
+.cap {
     position: fixed;
     top: 50%;
     left: 50%;
     cursor: pointer;
-    transition: transform 750ms; /*If user hovers over element, the element will move right.*/
-    &:hover{
+    transition: transform 750ms;
+
+    /*If user hovers over element, the element will move right.*/
+    &:hover {
         transform: translateX(200px);
     }
 
 }
 
-.capTop{
+.capTop {
     transform: translate(-50%, -125%);
     border-bottom: 200px solid rgb(137, 25, 25);
     border-left: 100px solid transparent;
-    border-right:100px solid transparent;
+    border-right: 100px solid transparent;
     height: 0px;
     width: 400px;
 }
 
-.capEdge{
+.capEdge {
     transform: translate(-50%, -500%);
     background-color: rgb(90, 12, 12);
     height: 50px;
@@ -63,22 +65,22 @@ body{
 }
 
 /* Background Elements */
-.background{
+.background {
     position: fixed;
     top: 50%;
     left: 50%;
 }
 
-.ground{
+.ground {
     transform: translate(-50%, -20%);
     border-bottom: 600px solid rgb(70, 54, 59);
     border-left: 500px solid transparent;
-    border-right:500px solid transparent;
+    border-right: 500px solid transparent;
     height: 0;
     width: 1200px;
 }
 
-.wall{
+.wall {
     transform: translate(-600px, -1120px);
     height: 400px;
     width: 1200px;

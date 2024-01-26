@@ -1,24 +1,26 @@
 /* To align the text in the center together. */
-body{
+body {
     text-align: center;
     display: flex;
-	justify-content: center;
-	align-items: center;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
 /* Loads adobe font into this class*/
-.adobeFont{
-display: inline-block;
-font-family: "tomarik-display-shadow", sans-serif;
-font-weight: 400;
-font-size: 30px;
-font-style: normal;
-transition: color 0.5s ease-out, animation 0.5s ease-in-out; /*Ease in and out effect for the color and jump animation*/
-&:hover{
-    color:rgb(255, 149, 0);
-    animation: jump 1s infinite;
-}
+.adobeFont {
+    display: inline-block;
+    font-family: "tomarik-display-shadow", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    font-style: normal;
+    transition: color 0.5s ease-out, animation 0.5s ease-in-out;
+
+    /*Ease in and out effect for the color and jump animation*/
+    &:hover {
+        color: rgb(255, 149, 0);
+        animation: jump 1s infinite;
+    }
 }
 
 /* Animation to make the adobe font class jump.*/
@@ -26,25 +28,32 @@ transition: color 0.5s ease-out, animation 0.5s ease-in-out; /*Ease in and out e
     0% {
         transform: translateY(0px);
     }
+
     20% {
-        transform: translateY(10px); /*Bracing for action*/
+        transform: translateY(10px);
+        /*Bracing for action*/
     }
+
     50% {
-        transform: translateY(-300px); /*Peak height*/
+        transform: translateY(-300px);
+        /*Peak height*/
     }
+
     100% {
         transform: translateY(0px);
     }
 }
 
 /* Loads google font into this class*/
-.googleFont{
+.googleFont {
     display: inline-block;
     font-family: 'Raleway', Arial;
     font-size: 20px;
-    transition: color 0.5s ease-out, font-size 0.5s ease-out; /*Ease in and out effect for the color and grow animation*/
-    &:hover{
-        color:red;
+    transition: color 0.5s ease-out, font-size 0.5s ease-out;
+
+    /*Ease in and out effect for the color and grow animation*/
+    &:hover {
+        color: red;
         font-size: 200px;
     }
 }
@@ -54,19 +63,21 @@ transition: color 0.5s ease-out, animation 0.5s ease-in-out; /*Ease in and out e
     font-family: 'Bespoke-YDRFyMQCWS';
     src: url('Bespoke-YDRFyMQCWS.eot');
     src: url('Bespoke-YDRFyMQCWS.eot?#iefix') format('embedded-opentype'),
-       url('Bespoke-YDRFyMQCWS.woff') format('woff'),
-       url('Bespoke-YDRFyMQCWS.ttf') format('truetype'),
-       url('Bespoke-YDRFyMQCWS.svg#Bespoke-YDRFyMQCWS') format('svg');
+        url('Bespoke-YDRFyMQCWS.woff') format('woff'),
+        url('Bespoke-YDRFyMQCWS.ttf') format('truetype'),
+        url('Bespoke-YDRFyMQCWS.svg#Bespoke-YDRFyMQCWS') format('svg');
 }
 
 /* Loads self hosted font into this class*/
-.selfHost{
+.selfHost {
     display: inline-block;
     font-family: 'Bespoke', Arial;
     font-size: 25px;
-    transition: color 0.5s ease-out, animation 0.5s ease-in-out; /*Ease in and out effect for the color and slide animation*/
-    &:hover{
-        color:rgb(54, 209, 106);
+    transition: color 0.5s ease-out, animation 0.5s ease-in-out;
+
+    /*Ease in and out effect for the color and slide animation*/
+    &:hover {
+        color: rgb(54, 209, 106);
         animation: slide 0.8s infinite;
     }
 }
@@ -76,9 +87,12 @@ transition: color 0.5s ease-out, animation 0.5s ease-in-out; /*Ease in and out e
     0% {
         transform: translateX(0);
     }
+
     50% {
-        transform: translateX(400px); /*peak distance*/
+        transform: translateX(400px);
+        /*peak distance*/
     }
+
     100% {
         transform: translateX(0);
     }
