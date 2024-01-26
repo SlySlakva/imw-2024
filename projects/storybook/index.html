@@ -7,21 +7,43 @@
     </head>
 
     <body>
-        <!-- Background -->
+        <!-- Background Setup + Figure Animation-->
         <div class="background">
-            <div class="wall"></div>
+            <div class="wall">
+                <div class="painting">
+                    <div class="figure">
+                        <div class="body"></div>
+                        <div class="head"></div>
+                        <div class="eye"></div>
+                        <div class="pupil"></div>
+                        <div class="eye" style="transform: translate(-50%, 100%);"></div>
+                        <div class="pupil2"></div>
+                    </div>
+                </div>
+            </div>
             <div class="ground"></div>
-            <div id="myWindow" class="window"></div>
+            <div class="window">
+                <div class="frame"></div>
+                <div class="glass">
+                </div>
+            </div>
         </div>
 
         <!-- Introduction Text -->
-        <div id="first" class="fade-in">This is my box.</div>
+        <div id="first" class="fade-in" style="transform: translate(-50%, -330%);">This is my box.</div>
         <div id="second" class="fade-in" style="font-size: 20px;">It's holding something very important.</div>
-        <div id="third" class="fade-in" style="font-size: 20px;">Please watch it for 5 minutes.</div>
-        <div id="four" class="fade-in" style="font-size: 20px; font-weight: bold;">Don't touch it while I'm gone.</div>
+        <div id="third" class="fade-in" style="font-size: 20px;">Please watch it for 3 minutes.</div>
+        <div id="four" class="fade-in" style="font-size: 20px; font-weight: bold;">Don't open it while I'm gone.</div>
+        <div id="timer"></div>
 
-        <div class="box" id="myBox"></div>
+        <!-- Box Setup (Clickable) -->
+        <div class="box" id="myBox">
+            <div class="lid"></div>
+            <div class="top"></div>
+        </div>
+        <div class="shadow"></div>
 
+        <!-- Newspaper (Hover + Animation). -->
         <div class="newspaper">
             <div class="cream"></div>
             <div class="newsText">Current Events</div>
@@ -32,17 +54,16 @@
             <div class="newsText" style="top:30%;">--------------------</div>
             <div class="newsText" style="top:35%;">--------------------</div>
             <div class="newsText" style="top:40%;">--------------------</div>
-            <div clas="boxText">TOUCH THE BOX</div>
-            <div clas="boxText" style="top:10%;">DO IT DO IT DO IT</div>
-            <div clas="boxText" style="top:15%;">YOU KNOW YOU WANT TO</div>
-            <div clas="boxText" style="top:20%;">OPEN THE BOX</div>
-            <div clas="boxText" style="top:25%;">OPEN IT OPEN IT</div>
+            <div id="first" class="boxText">open the box</div>
+            <div id="secondMes" class="boxText" style="top:15%;">do it</div>
+            <div id="thirdMes" class="boxText" style="top:25%;">you know you want to</div>
+            <div id="fourMes" class="boxText" style="top:35%;">just take a peek</div>
             
         </div>
 
-        <div class="timer-container">
-            <div id="timer">05:00</div>
-            <button id="startBtn">Start Timer</button>
+        <!-- Ending Screen -->
+        <div class="cover">
+            <div class="text">Thank you for watching my box!</div>
         </div>
 
         <script src="script.js"></script>

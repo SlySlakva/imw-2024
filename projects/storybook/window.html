@@ -1,78 +1,50 @@
+<!-- Basically a testing page for seperate code -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .newsText {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Page Overlay</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
 
-        .cover {
-            background-color: #000;
-            opacity: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transition: opacity 0.5s ease-in-out;
-            pointer-events: none; /* Allows clicks to pass through the cover */
-        }
-    </style>
-    <title>Click Toggle</title>
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    z-index: 999; /* Ensure it's on top of other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+</style>
 </head>
 <body>
 
-<div id="myWindow">Click me</div>
-<div class="cover"></div>
-<div class="newsText">This is the news text 1</div>
-<div class="newsText">This is the news text 2</div>
-<div class="newsText">This is the news text 3</div>
+<div class="overlay">
+  <div class="content">
+    <!-- Your content goes here -->
+    <h1>This is a full-page overlay box</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+</div>
 
-<script defer>
-    // Variable to store the click count
-    let clickCount = 0;
-
-    // Function to handle the click event
-    function handleClick() {
-        // Increment the click count
-        clickCount++;
-
-        // Get all elements by class name
-        const newsTextElements = document.querySelectorAll('.newsText');
-        const cover = document.querySelector('.cover');
-
-        // Change opacity based on the click count
-        if (clickCount % 2 === 1) {
-            // Odd click count, set newsText opacity to 0 and cover opacity to 1
-            newsTextElements.forEach(newsText => newsText.style.opacity = 0);
-            cover.style.opacity = 1;
-        } else {
-            // Even click count, set newsText opacity to 1 and cover opacity to 0
-            newsTextElements.forEach(newsText => newsText.style.opacity = 1);
-            cover.style.opacity = 0;
-        }
-    }
-
-    // Set the initial state based on the initial click count
-    document.addEventListener('DOMContentLoaded', function () {
-        const cover = document.querySelector('.cover');
-
-        if (clickCount % 2 === 1) {
-            // Odd initial click count, set cover opacity to 1
-            cover.style.opacity = 1;
-        } else {
-            // Even initial click count, set cover opacity to 0
-            cover.style.opacity = 0;
-        }
-
-        // Add click event listener to the element with ID 'myWindow'
-        const myWindow = document.getElementById('myWindow');
-        myWindow.addEventListener('click', handleClick);
-    });
-</script>
+<!-- Your other page content goes here -->
 
 </body>
 </html>

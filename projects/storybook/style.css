@@ -8,23 +8,7 @@ body {
     background-color: rgb(71, 54, 60);
 }
 
-.timer-container {
-    text-align: left;
-    margin: 20px;
-}
-
-#timer {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-#startBtn {
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-/* Visuals */
+/* Box Elements*/
 .box{
     position: fixed;
     top: 50%;
@@ -32,50 +16,37 @@ body {
   transform: translate(-50%, -50%);
     width: 200px;
     height: 100px;
-    background-color: #262625;
+    background-color: #600c0c;
     cursor: pointer;
-    
 }
 
-/* Hovering newspaper */
-.newspaper{
-    position:fixed;
+.lid{
+    transform: translate(0%, -100%);
+    width: 200px;
+    height: 10px;
+    background-color: rgb(90, 12, 12);
+    cursor: pointer;
+}
+
+.top{
+    transform: translate(0%, -300%);
+    border-bottom: 10px solid rgb(137, 25, 25);
+    border-left: 10px solid transparent;
+    border-right:10px solid transparent;
+    height: 0;
+    width: 180px;
+}
+
+.shadow{
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 40%);
-    background-color: #d7d0d1;
-    display: grid;
-    width: 800px;
-    height: 800px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    transition: transform 750ms;
-    &:hover{
-        transform: translateY(20px);
-    }
-}
-
-.newsText {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    font-size:50px;
-    color: #92898c;
-    opacity:1;
-}
-
-.boxText {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    font-size:50px;
-    color: #92898c;
-    opacity:0;
-}
-
-/* Colors */
-.cream{
-    background-color: #e9e5e6;
+    transform: translate(-50%, 50%);
+    border-bottom: 100px solid rgb(65, 50, 54);;
+    border-left: 80px solid transparent;
+    border-right:80px solid transparent;
+    height: 0;
+    width: 200px;
 }
 
 /* Background Elements */
@@ -98,23 +69,134 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
-    border-bottom: 600px solid rgb(87, 67, 73);;
+    border-bottom: 600px solid rgb(87, 67, 73);
     border-left: 700px solid transparent;
     border-right:700px solid transparent;
     height: 0;
     width: 400px;
 }
 
+/* Window Elements */
 .window{
-    position:fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-370%, -220%);
-    width: 100px;
-    height:100px;
-    background-color: rgb(88, 86, 145);
 }
 
+.frame{    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -180%);
+    width: 190px;
+    height:220px;
+    background-color: #272b2bbc;
+}
+
+.glass{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -190%);
+    width: 180px;
+    height:200px;
+    background-color: #94f3fabc;
+}
+
+/* Painting Elements - Features a figure that slowly looks at the box.*/
+.painting{
+    position:fixed;
+    top: 40%;
+    left: -70%;
+    transform: rotate(90deg);
+    border-bottom: 100px solid rgb(151, 138, 142);;
+    border-left: 65px solid transparent;
+    border-right:65px solid transparent;
+    height: 0;
+    width: 200px;
+}
+
+.figure{
+
+}
+
+.head{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    height: 50px;
+    width: 60px;
+    background-color: #b18466;
+    border-radius: 50%;
+}
+
+.body{
+    transform: translate(88%, 180%);
+    border-bottom: 20px solid #8a6953;
+    border-left: 13px solid transparent;
+    border-right:13px solid transparent;
+    height: 0;
+    width: 100px;
+}
+
+.eye{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    height: 20px;
+    width: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.pupil{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 370%);
+    height: 12px;
+    width: 12px;
+    background-color: #343131;
+    border-radius: 50%;
+    display: inline-block;
+    animation-name: pupilMove;
+    animation-duration: 120s; /*Makes the pupil shift towards the box*/
+    animation-fill-mode: forwards;
+}
+
+.pupil2{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 150%);
+    height: 12px;
+    width: 12px;
+    background-color: #343131;
+    border-radius: 50%;
+    display: inline-block;
+    animation-name: pupil2Move; /*Makes the pupil shift towards the box*/
+    animation-duration: 120s;
+    animation-fill-mode: forwards;
+}
+
+/* Pupil animations*/
+@keyframes pupilMove {
+    0% {
+        transform: translate(-50%, 370%);
+    }
+    100%{
+        transform: translate(-30%, 340%);
+    }
+}
+
+@keyframes pupil2Move {
+    0% {
+        transform: translate(-50%, 200%);
+    }
+    100%{
+        transform: translate(-30%, 160%);
+    }
+}
 
 /* Introduction Text Fade Sequence */
 .fade-in{
@@ -129,18 +211,20 @@ body {
     animation-fill-mode: forwards;
 }
 
+/* Delay the second line by 4 seconds.  */
 #second{
     animation-delay: 4s;
 }
-
+/* Delay the third line by 8 seconds.  */
 #third{
     animation-delay: 8s;
 }
-
+/* Delay the fourth line by 12 seconds.  */
 #four{
     animation-delay: 12s;
 }
 
+/* Fade text animation */
 @keyframes fadeIn {
     0% {
         opacity:0;
@@ -153,9 +237,141 @@ body {
     }
 }
 
-  /* STUFF THAT DIDNT WORK */
+/* Hovering newspaper */
+.newspaper{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    background-color: #d7d0d1;
+    display: grid; /*used the grid system to make two pages*/
+    width: 800px;
+    height: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    transition: transform 750ms; /*if user hovers over the element, the element will move up for the user to read.*/
+    &:hover{
+        transform: translateY(20px);
+    }
+}
 
-  /* .newspaper{
+/* Regular Current Events text */
+.newsText {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size:50px;
+    color: #92898c;
+    opacity:1;
+}
+
+/* The box messages that fade in gradually. */
+.boxText {
+    position: absolute;
+    top: 5%;
+    left: 55%;
+    font-size:35px;
+    color: #850909bc;
+    opacity:0;
+    animation: message ease 500s; /*Ease in messages over 500 seconds.*/
+    animation-fill-mode: forwards;
+}
+
+/* Second message is delayed by 20 seconds.  */
+#secondMes{
+    animation-delay: 20s;
+}
+/* third message is delayed by 40 seconds.  */
+#thirdMes{
+    animation-delay: 40s;
+}
+/* fourth message is delayed by 60 seconds.  */
+#fourMes{
+    animation-delay: 60s;
+}
+
+/* Fade box messages in sequence.  */
+@keyframes message {
+    0% {
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+/* newspaper color */
+.cream{
+    background-color: #e9e5e6;
+}
+
+/* Timer */
+#timer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -600%);
+    font-size: 24px;
+    margin-top: 20px;
+    color:white;
+}
+
+/* Ending Text */
+.text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    opacity: 0;
+    animation: text 220s forwards;
+    pointer-events: none;
+}
+
+/* Fade in ending text animation */
+@keyframes text {
+    0% {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    90% {
+        opacity: 0; /* Stay invisible for the initial 10% */
+    }
+    100% {
+        opacity: 1; /* Gradually fade in to opacity 1 */
+    }
+}
+
+/* Ending Cover Screen */
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    animation: cover 1s ease-in-out 2s forwards;
+    animation-delay: 200s;
+    pointer-events: none;
+}
+
+/* Fade in cover screen animation */
+@keyframes cover {
+    0% {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    100% {
+      background-color: rgb(255, 255, 255);
+    }
+  } 
+
+
+/* STUFF THAT DIDNT WORK */
+
+/* .newspaper{
 
 }
 
@@ -166,7 +382,7 @@ body {
     transition: transform 750ms;
     &:hover{
         transform: translateY(200px);
-    }
+}
 }
 
 .rightPage{

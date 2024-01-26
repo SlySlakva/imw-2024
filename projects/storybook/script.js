@@ -1,41 +1,26 @@
+//Click Function (applied to the box)
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('myBox').addEventListener('click', function() {
         window.location.href = 'decision.html';
     });
 });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    let timer;
-    let timeLeft;
-    const timerDisplay = document.getElementById('timer');
-    const startBtn = document.getElementById('startBtn');
+//Timer Function
+document.getElementById("four").addEventListener("animationend", startTimer); //Starts after the end of the fourth introductory message animation.
 
-    startBtn.addEventListener('click', function () {
-        if (!timer || timeLeft === 0) {
-            startTimer(300); // 5 minutes in seconds
-        }
-    });
+function startTimer() {
+  var timeLeft = 180; // 3 minutes in seconds
+  var timerDisplay = document.getElementById("timer");
 
-    function startTimer(seconds) {
-        clearInterval(timer);
+  var countdown = setInterval(function() {
+    var minutes = Math.floor(timeLeft / 60);
+    var seconds = timeLeft % 60;
 
-        timeLeft = seconds;
-        displayTimeLeft();
+    timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
-        timer = setInterval(function () {
-            timeLeft--;
-            displayTimeLeft();
-
-            if (timeLeft === 0) {
-                clearInterval(timer);
-            }
-        }, 1000);
+    if (--timeLeft < 0) {
+      clearInterval(countdown);
     }
+  }, 1000);
+}
 
-    function displayTimeLeft() {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
-        const display = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        timerDisplay.textContent = display;
-    }
-});
