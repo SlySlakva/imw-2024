@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Storyboard</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!-- Background Setup + Figure Animation-->
+        <div class="background">
+            <div class="wall">
+                <div class="painting">
+                    <div class="figure">
+                        <div class="body"></div>
+                        <div class="head"></div>
+                        <div class="eye"></div>
+                        <div class="pupil"></div>
+                        <div class="eye" style="transform: translate(-50%, 100%);"></div>
+                        <div class="pupil2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ground"></div>
+            <div class="window">
+                <div class="frame"></div>
+                <div class="glass">
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction Text -->
+        <div id="first" class="fade-in" style="transform: translate(-50%, -330%);">This is my box.</div>
+        <div id="second" class="fade-in" style="font-size: 20px;">It's holding something very important.</div>
+        <div id="third" class="fade-in" style="font-size: 20px;">Please watch it for 3 minutes.</div>
+        <div id="four" class="fade-in" style="font-size: 20px; font-weight: bold;">Don't open it while I'm gone.</div>
+        <div id="timer"></div>
+
+        <!-- Box Setup (Clickable) -->
+        <div class="box" id="myBox">
+            <div class="lid"></div>
+            <div class="top"></div>
+        </div>
+        <div class="shadow"></div>
+
+        <!-- Newspaper (Hover + Animation). -->
+        <div class="newspaper">
+            <div class="cream"></div>
+            <div class="newsText">Current Events</div>
+            <div class="newsText" style="top:10%;">--------------------</div>
+            <div class="newsText" style="top:15%;">--------------------</div>
+            <div class="newsText" style="top:20%;">--------------------</div>
+            <div class="newsText" style="top:25%;">--------------------</div>
+            <div class="newsText" style="top:30%;">--------------------</div>
+            <div class="newsText" style="top:35%;">--------------------</div>
+            <div class="newsText" style="top:40%;">--------------------</div>
+            <div id="first" class="boxText">open the box</div>
+            <div id="secondMes" class="boxText" style="top:15%;">do it</div>
+            <div id="thirdMes" class="boxText" style="top:25%;">you know you want to</div>
+            <div id="fourMes" class="boxText" style="top:35%;">just take a peek</div>
+            
+        </div>
+
+        <!-- Ending Screen -->
+        <div class="cover">
+            <div class="text">Thank you for watching my box!</div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+    
+</html>
