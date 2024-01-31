@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 36px;
+    /*top right bottom left order of padding*/
+}
+
+.site-name {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.hero-section {
+    height: 100vh;
+    /*flex box mode, makes it easier to organize*/
+    display: flex;
+    /*horiziontal alignment*/
+    justify-content: center;
+    /*vertical alignment*/
+    align-items: center;
+    /*puts everything in a column*/
+    flex-direction: column;
+}
+
+.call-to-action {
+    text-transform: uppercase;
+
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 320px;
+    border: 1px solid black;
+}
+
+h1 {
+    font-size: 120px;
+    line-height: 106px;
+    margin-bottom: 72px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+ul {
+    list-style-type: none;
+
+    /*removes bullets in list*/
+    li {
+        font-size: 18px;
+        display: inline-block;
+        /*displays elements on one line*/
+
+        &:first child {
+            margin-right: 44px;
+        }
+
+        &:nth-child(2) {
+            margin-right: 44px;
+        }
+    }
+}
+
+body {
+    font-family: sans-serif;
+}
