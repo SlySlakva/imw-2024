@@ -1,6 +1,11 @@
+/* Sections */
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: sans-serif;
 }
 
 header {
@@ -13,6 +18,16 @@ header {
     /*top right bottom left order of padding*/
 }
 
+footer {
+    background: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 36px;
+}
+
+/* Classes */
 .site-name {
     font-size: 36px;
     font-weight: 500;
@@ -20,6 +35,7 @@ header {
 
 .hero-section {
     height: 100vh;
+    text-align: center;
     /*flex box mode, makes it easier to organize*/
     display: flex;
     /*horiziontal alignment*/
@@ -39,29 +55,40 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 320px;
+
+}
+
+.info-section-item {
+    display: flex;
+    padding: 31px 36px;
+    flex-direction: column;
     border: 1px solid black;
 }
 
-h1 {
-    font-size: 120px;
-    line-height: 106px;
-    margin-bottom: 72px;
+.footer-column {
+    display: flex;
+    flex-direction: column;
 }
 
-h2 {
-    font-size: 28px;
+.social-links {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+    padding: 14px;
 }
 
+/* Text Styles */
 ul {
     list-style-type: none;
-
     /*removes bullets in list*/
+
     li {
         font-size: 18px;
         display: inline-block;
         /*displays elements on one line*/
 
-        &:first child {
+        &:first-child {
             margin-right: 44px;
         }
 
@@ -71,6 +98,31 @@ ul {
     }
 }
 
-body {
-    font-family: sans-serif;
+h1 {
+    font-size: 120px;
+    line-height: 106px;
+    margin-bottom: 72px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
