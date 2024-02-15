@@ -1,0 +1,296 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section Elements */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 85vh; */
+    padding: 20px;
+}
+
+/* Rhode Island School of Design Logo */
+.risd {
+    width: 400px;
+    height: 400px;
+    filter: grayscale(100%);
+
+}
+
+/* Turns logo blue when the mouse hovers over it. */
+.risd:hover {
+    filter: grayscale(0%);
+    transition: 0.2s;
+}
+
+.line {
+    border-left: 1.5px solid black;
+    height: auto;
+}
+
+/* Title Card Elements */
+.title-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Title Text Styles */
+h1 {
+    /* display: inline-block; */
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", arial;
+    font-weight: bold;
+    font-size: 150px;
+    text-transform: uppercase;
+    /* Adjusts the paragraph spacing between words. */
+    line-height: 0.8;
+
+}
+
+h2 {
+    /* display: inline-block; */
+    margin: 0;
+    font-family: "Scope One", serif;
+    font-size: 20px;
+
+}
+
+/* Title Animation */
+/* If mouse hovers over the title card element, the subtitles will move back and forth. Otherwise the animation stays paused. */
+.title-section:hover .slide-right {
+    animation-play-state: running;
+}
+
+.title-section:hover .slide-left {
+    animation-play-state: running;
+}
+
+.slide-right {
+    animation: slideRight 2s infinite;
+    /* Pauses the animation before and after the mouse hovers over the title card.  */
+    animation-play-state: paused;
+
+}
+
+.slide-left {
+    animation: slideLeft 2s infinite;
+    /* Pauses the animation before and after the mouse hovers over the title card.  */
+    animation-play-state: paused;
+}
+
+/* Keyframes for the Sliding Animations */
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(220px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-360px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Call to action/Button Elements */
+.call-to-action {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-family: "Poppins", Arial;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    padding: 5px;
+}
+
+/* When mouse hovers over the call to action button, the color of the text and borders change to blue.  */
+.call-to-action:hover {
+    border-top: 1px solid blue;
+    border-bottom: 1px solid blue;
+    color: blue;
+
+}
+
+/* Information Section */
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+}
+
+/* Left Information Section with inverted colors.  */
+.info-section-one {
+    display: flex;
+    padding: 30px 30px;
+    background-color: white;
+    filter: invert(100%);
+}
+
+/* Right Information Section  */
+.info-section-two {
+    display: flex;
+    padding: 30px 30px;
+}
+
+/* Organizes the text elements into a column without affecting the line element.*/
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Text Styles according to each designer's preferences.  */
+/* Referred to each designer's websites for getting fonts or finding similiar fonts.  */
+/* Applies to the Designer's Name */
+#prem {
+    margin: 0;
+    padding: 5px 5px 0px 5px;
+    font-family: "Doppio One", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    /* Removes the hyperlink decorations.  */
+    text-decoration: none;
+
+    /* Mouse hover changes the color of the text.  */
+    transition: color 0.5s ease-out;
+
+    &:hover {
+        color: rgb(72, 72, 72);
+    }
+}
+
+/* Applies to the dates and descriptions.  */
+.prem-subtext {
+    margin: 0;
+    padding: 0px 0px 5px 5px;
+    font-family: "Doppio One", sans-serif;
+    font-size: 15px;
+}
+
+/* Applies to the Designer's Name */
+#nelly {
+    margin: 0;
+    padding: 5px 5px 0px 5px;
+    font-family: "Righteous", Times;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+
+    /* Mouse hover changes the color of the text and adds a glow behind it.  */
+    transition: text-shadow 0.1s ease-out, color 0.5s ease-out;
+
+    &:hover {
+        text-shadow: 2px 2px 4px rgb(15, 163, 69), 0px 0px 4px green;
+        color: white;
+    }
+}
+
+/* Applies to the dates and descriptions.  */
+.nelly-subtext {
+    margin: 0;
+    padding: 0px 0px 5px 5px;
+    font-family: "Righteous", sans-serif;
+    font-size: 15px;
+}
+
+/* Applies to the Designer's Name */
+#eroon {
+    margin: 0;
+    padding: 5px 5px 0px 5px;
+    font-family: "Roboto", Arial;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+
+    /* Mouse hover underlines text.  */
+    transition: color 0.5s ease-out;
+
+    &:hover {
+
+        text-decoration: underline;
+    }
+}
+
+/* Applies to the dates and descriptions.  */
+.eroon-subtext {
+    margin: 0;
+    padding: 0px 0px 5px 5px;
+    font-family: "Roboto", Arial;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+/* Applies to the Designer's Name */
+#paul {
+    margin: 0;
+    padding: 5px 5px 0px 5px;
+    font-family: "Georgia", "Times New Roman", sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(145, 145, 145);
+
+    /* Mouse hover underlines text.  */
+    transition: color 0.5s ease-out;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Applies to the dates and descriptions.  */
+.paul-subtext {
+    margin: 0;
+    padding: 0px 0px 5px 5px;
+    font-family: "Georgia", "Times New Roman", sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    color: rgb(145, 145, 145);
+}
+
+/* Footer Elements */
+footer {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+
+}
+
+/* Sizing, spacing and filtering social media logos. */
+.social {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    filter: grayscale(100%);
+}
+
+/* Mouse Hover removes the greyscale element. */
+.social:hover {
+    filter: grayscale(0%);
+    transition: 0.2s;
+}
