@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.scope-one-regular {
+    font-family: "Scope One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Rhode Island School of Design Logo */
+.risd {
+    width: 300px;
+    height: 300px;
+    filter: grayscale(100%);
+
+}
+
+/* Turns logo blue when the mouse hovers over it. */
+.risd:hover {
+    filter: grayscale(0%);
+    transition: 0.2s;
+}
+
+.line {
+    border-left: 1.5px solid black;
+    height: 150px;
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: auto;
+}
+
+.info-section-one {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    display: flex;
+    padding: 30px 30px;
+    flex-direction: column;
+    background-color: white;
+    filter: invert(100%);
+}
+
+.info-section-two {
+    grid-column: 2 / 2;
+    grid-row: 2 / 4;
+    display: flex;
+    padding: 30px 30px;
+    flex-direction: column;
+}
+
+.info-section-three {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    display: flex;
+    padding: 30px 30px;
+    flex-direction: column;
+    background-color: white;
+}
+
+.info-section-three {
+    grid-column: 2 / 2;
+    grid-row: 4 / 4;
+    display: flex;
+    padding: 30px 30px;
+    flex-direction: column;
+}
+
+
+h1 {
+    display: inline-block;
+    font-family: "Poppins", arial;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 100px;
+    text-transform: uppercase;
+    line-height: 0.8;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: inline-block;
+    font-family: "Scope One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+}
+
+#header {
+    display: inline-block;
+    font-family: "Poppins", arial;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    font-style: normal;
+    margin: 0;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+
+    transition: color 0.5s ease-out;
+
+    /*Change Color*/
+    &:hover {
+        color: blue;
+        text-decoration: underline;
+    }
+}
+
+h4 {
+    display: inline-block;
+    font-family: arial, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    font-style: normal;
+    margin: 0;
+    padding: 5px;
+}
+
+p {
+    display: inline-block;
+    font-family: arial, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    font-style: normal;
+    margin: 0;
+    padding: 5px;
+}
