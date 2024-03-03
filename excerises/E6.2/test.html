@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTINGGGGG</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .clipped-image {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('nationalPark.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            -webkit-clip-path: inset(25% 25% 25% 25%);
+            clip-path: inset(25% 25% 25% 25%);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 429px;
+            height: 20px;
+            background-color: rgba(13, 114, 215, 0.5);
+            cursor: pointer;
+        }
+
+        .button {
+            position: absolute;
+            top: 25%;
+            left: 72.7%;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 7, 7, 0.5);
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            // Function to create clipped image div
+            function createClippedImage() {
+                var $clippedImage = $('<div>', { class: 'clipped-image' });
+                var $header = $('<div>', { class: 'header' });
+                var $button = $('<div>', { class: 'button' });
+                $clippedImage.append($header, $button);
+                $('body').append($clippedImage);
+            }
+
+            // Function to generate random position
+            function randomPosition() {
+                var xPos = Math.random() * ($(window).width() - 400);
+                var yPos = Math.random() * ($(window).height() - 400);
+                return { x: xPos, y: yPos };
+            }
+
+            // Function to create two new clipped images with random positions
+            function createMultipleClippedImages() {
+                console.log("create");
+                for (var i = 0; i < 5; i++) {
+                    var position = randomPosition();
+                    console.log(position.x, position.y);
+                    var $clippedImage = $('<div>', { class: 'clipped-image' }).css({
+                        top: position.y,
+                        left: position.x,
+                        backgroundPosition: '0 0'
+                    });
+                    var $header = $('<div>', { class: 'header' });
+                    var $button = $('<div>', { class: 'button' });
+                    $clippedImage.append($header, $button);
+                    $('body').append($clippedImage);
+                }
+            }
+
+            // Call the function to create clipped image
+            createClippedImage();
+
+            // Make the body draggable
+            $("body").draggable({
+                handle: ".header",
+                drag: function (event, ui) {
+                    var dx = ui.position.left;
+                    var dy = ui.position.top;
+                    $(".clipped-image").css("background-position", -dx + "px " + -dy + "px");
+                    //to update the image when box drags. 
+                }
+            });
+
+            // Add click event listener to the button
+            $('.button').click(function () {
+                console.log("dead");
+                $('.clipped-image').remove();
+                createMultipleClippedImages();
+            });
+        });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

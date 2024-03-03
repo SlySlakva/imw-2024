@@ -1,0 +1,39 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('nationalPark.jpeg');
+    background-size: cover;
+    /* Prevent image from repeating */
+    background-repeat: no-repeat;
+    -webkit-clip-path: inset(calc(50% - 90px) calc(50% - 125px));
+    clip-path: inset(calc(50% - 90px) calc(50% - 125px));
+    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1))
+}
+
+.header {
+    position: absolute;
+    width: 250px;
+    height: 20px;
+    background-color: rgba(13, 114, 215, 1);
+    cursor: pointer;
+}
+
+.button {
+    position: absolute;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 7, 7, 1);
+    cursor: pointer;
+}
