@@ -1,0 +1,135 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Header*/
+.titlecard {
+    background: rgb(53, 156, 165);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+/*Search Bar to search authors and titles.*/
+#searchInput {
+    margin: 20px;
+    width: 15%;
+    font-size: 16px;
+    padding: 10px 30px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+/*Main Body*/
+.container {
+    display: flex;
+    height: 100vh;
+    /* Adjust as needed */
+}
+
+/*Index bar to allow users to scroll through the list of authors and titles.*/
+.sidebar {
+    flex: 0 0 250px;
+    padding-top: 20px;
+    overflow-y: auto;
+    background-color: rgb(101, 174, 180);
+    /* Add vertical scrollbar */
+}
+
+/*Displays the selected poem to read*/
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(159, 212, 218);
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+/*Footer*/
+footer {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 20px 26px;
+}
+
+
+/*Text Styling*/
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 20px;
+    color: #ffffff;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: bold;
+    font-weight: 800px;
+    font-size: 20px;
+    padding: 1px 5px;
+    margin: 8px;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    padding: 1px 5px;
+    margin: 8px;
+}
+
+h3:hover {
+    color: rgb(53, 156, 165);
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 13px;
+    padding: 1px 20px;
+    margin: 8px;
+}
+
+h6:hover {
+    color: rgb(53, 156, 165);
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+h4 {
+    font-family: "Petrona", 'Times New Roman', Times, serif, sans-serif;
+    font-size: 30px;
+    padding: 1px;
+    margin: 8px;
+}
+
+h5 {
+    font-family: "Petrona", 'Times New Roman', Times, serif, sans-serif;
+    font-weight: 100px;
+    font-size: 20px;
+    padding: 1px;
+    margin: 8px;
+}
+
+p {
+    font-family: "Petrona", 'Times New Roman', Times, serif;
+    font-size: 15px;
+    padding: 1px 5px;
+    margin: 8px;
+}
+
+
+.petrona {
+    font-family: "Petrona", 'Times New Roman', Times, serif;
+    font-optical-sizing: auto;
+    font-weight: 900px;
+    font-style: normal;
+}
