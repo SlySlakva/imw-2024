@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Make shapes draggable
     $(".shape").draggable();
 
-    $("#image").draggable();
+    $(".image").draggable();
 
     // Make each word draggable
     $("#paragraph p").html(function (_, html) {
@@ -10,4 +10,16 @@ $(document).ready(function () {
     });
 
     $(".draggable-word").draggable();
+
+    $('.circle').click(function () {
+        $(this).toggleClass('clicked');
+    });
+
+    $('.square').click(function () {
+        $(this).toggleClass('clicked');
+    });
+
+    $('.triangle').click(function () {
+        $(this).toggleClass('clicked');
+    });
 });

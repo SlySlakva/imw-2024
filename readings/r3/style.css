@@ -5,7 +5,7 @@
     position: relative;
 }
 
-#image {
+.image {
     position: absolute;
     top: 100px;
     left: 100px;
@@ -22,6 +22,12 @@
     cursor: pointer;
     top: 20px;
     left: 253px;
+    transition: rotate 0.3s ease;
+}
+
+.square.clicked {
+    transform: rotate(45deg);
+    /* Rotate 45 degrees */
 }
 
 .circle {
@@ -32,6 +38,11 @@
     cursor: pointer;
     top: 204px;
     left: 230px;
+    transition: background-color 0.3s ease;
+}
+
+.circle.clicked {
+    background-color: red;
 }
 
 .triangle {
@@ -43,6 +54,11 @@
     cursor: pointer;
     top: 170px;
     left: 272px;
+    transition: scale 0.3s ease;
+}
+
+.triangle.clicked {
+    transform: scale(2);
 }
 
 img {
@@ -62,11 +78,11 @@ img {
 p {
     position: relative;
     margin: 0px;
-    color: rgb(0, 0, 0);
     font-family: "IM Fell English", sans-serif;
     font-size: 24px;
     cursor: pointer;
     line-height: 1.5;
+    user-select: none;
 }
 
 .im-fell-english-regular {
