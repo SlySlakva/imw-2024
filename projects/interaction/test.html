@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lily Pads on Water</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .water-background {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(to bottom, #061539, #1e91c7);
+            background-size: 400% 400%;
+            animation: moveGradient 30s ease infinite;
+        }
+
+        @keyframes moveGradient {
+
+            0%,
+            100% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+        }
+
+        .lily-pad {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            transform-origin: center;
+            transform: rotate(0deg);
+            /* Initial rotation */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="water-background"></div>
+
+    <!-- Your webpage content here -->
+
+    <script>
+        $(document).ready(function () {
+            // Function to generate random number within a range
+            function getRandomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            // Function to create lily pads
+            function createLilyPads() {
+                const numLilyPads = 30; // Number of lily pads
+                const container = $('body'); // Container to append lily pads
+
+                for (let i = 0; i < numLilyPads; i++) {
+                    const lilyPad = $('<img>').addClass('lily-pad');
+                    lilyPad.attr('src', 'lilypad3.png'); // Image source
+                    lilyPad.css('left', getRandomNumber(0, $(window).width() - 100) + 'px'); // Random horizontal position
+                    lilyPad.css('top', getRandomNumber(0, $(window).height() - 100) + 'px'); // Random vertical position
+                    lilyPad.css('transform', 'rotate(' + getRandomNumber(0, 360) + 'deg)'); // Random rotation
+                    lilyPad.css('animation-duration', getRandomNumber(10, 12) + 's');
+                    container.append(lilyPad);
+                }
+            }
+
+            // Create lily pads when the page loads
+            $(window).on('load', createLilyPads);
+        });
+    </script>
+
+</body>
+
+</html>

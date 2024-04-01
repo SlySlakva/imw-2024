@@ -1,0 +1,139 @@
+body,
+html {
+    /* to prevent the scrollbar from appearing */
+    overflow: hidden;
+}
+
+/*background*/
+.water {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    /*to prevent it from overlapping everything else*/
+    z-index: -1;
+    /*to add depth to the water*/
+    background: linear-gradient(to bottom, #1e91c7, #061539);
+    background-size: 200% 200%;
+    /*to create a sense of movement in the water*/
+    animation: moveGradient 60s ease infinite;
+}
+
+
+@keyframes moveGradient {
+
+    /*starting and ending with the same position to keep continuity to the gradual gradient change*/
+    0%,
+    100% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+
+.lily-pad {
+    /*allows overlapping*/
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    /*creates the effect that the lily pads are floating on the surface of the water*/
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    /*starting and ending with the same position to keep continuity to the movement*/
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/*flower container*/
+.flower {
+    position: fixed;
+    /*fixes the flower upright and scales it down*/
+    transform: rotate(-45deg) scale(0.3);
+
+}
+
+/*the root of the flower*/
+.root {
+    position: absolute;
+    top: 170px;
+    left: -80px;
+    width: 20px;
+    height: 200px;
+    /*fixes the root upright(needed due to the parents transform effects)*/
+    transform: rotate(45deg);
+    /*creates the effect that the root is fading into the water*/
+    background: linear-gradient(to bottom, rgb(4, 33, 5), rgba(255, 255, 255, 0));
+}
+
+/*the general petal template*/
+.petal {
+    /*allows overlap*/
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /*creates the initial shape*/
+    border-radius: 100% 10% 100% 10%;
+    /*bloom animation*/
+    transition: transform 0.5s ease-in-out;
+    transform-origin: bottom left;
+
+}
+
+/*the starting color scheme of the main petal (this is changed in js when a random gradient is applied as the new color*/
+.mainPetal {
+    background: linear-gradient(45deg, rgb(248, 232, 241), rgb(222, 43, 105));
+
+}
+
+/*the gradient color of the leaves*/
+.leaf {
+    background: linear-gradient(45deg, rgb(255, 255, 175), rgb(16, 132, 16));
+}
+
+/*spreads the petals apart and makes them bigger upon hover*/
+.flower:hover .petal {
+    transform: scale(1.2) rotate(var(--petal-rotate));
+}
+
+/*applies a special animation to make the leaf flip and foreshorten upon hover*/
+.flower:hover #greenfront {
+    transform: scaleX(-1) rotate(90deg) translate(-20px, 20px);
+    border-radius: 100% 10% 100% 60%;
+}
+
+/*applies a special animation to make the leaf flip and foreshorten upon hover*/
+.flower:hover #greenfrontleft {
+    transform: scaleX(-1) rotate(10deg)translate(25px, 0px);
+    border-radius: 100% 10% 100% 20%;
+}
+
+/*applies a special animation to make the leaf flip and foreshorten upon hover*/
+.flower:hover #greenfrontright {
+    transform: scaleX(-1) rotate(170deg)translate(25px, 0px);
+    border-radius: 100% 10% 100% 20%;
+}
+
+/*applies a special animation to make the middle petal appear foreshortened and add depth upon hover*/
+.flower:hover #mainfront {
+    transform: translate(-20px, 20px);
+    border-radius: 100% 10% 100% 40%;
+}
+
+/*applies a special animation to make the middle petal appear foreshortened and add depth, It also lowers the peteals to cover the bottom of the flower upon hover*/
+.flower:hover #mainfrontsides {
+    border-radius: 100% 10% 100% 30%;
+    top: 10px;
+}

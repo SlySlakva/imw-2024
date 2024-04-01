@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flowers</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flower {
+            position: absolute;
+            /* Position flowers absolutely for random placement */
+            transform: rotate(-45deg) scale(0.2);
+            /* Scale down the flower */
+            transform-origin: center;
+            /* Set the transform origin to the center */
+        }
+
+        .petal {
+            width: 200px;
+            height: 200px;
+            border-radius: 100% 10% 100% 10%;
+            position: absolute;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .mainPetal {
+            background: linear-gradient(45deg, rgb(248, 232, 241), rgb(222, 43, 105));
+            transform-origin: bottom left;
+        }
+
+        .greenPetal {
+            background: linear-gradient(45deg, rgb(255, 255, 175), rgb(16, 132, 16));
+            transform-origin: bottom left;
+        }
+
+        .flower:hover .mainPetal {
+            transform: scale(1.2) rotate(var(--main-rotate));
+        }
+
+        .flower:hover .petal {
+            transform: scale(1.2) rotate(var(--petal-rotate));
+        }
+
+        .flower:hover .greenPetal {
+            transform: scale(1.2) rotate(var(--green-rotate));
+        }
+
+        /* Additional hover animation for the petal with id "front" */
+        .flower:hover #greenfront {
+            transform: scaleX(-1) rotate(90deg) translate(-20px, 20px);
+            border-radius: 100% 10% 100% 60%;
+        }
+
+        /* Additional hover animation for the petal with id "front" */
+        .flower:hover #greenfrontleft {
+            transform: scaleX(-1) rotate(10deg)translate(25px, 0px);
+            border-radius: 100% 10% 100% 20%;
+        }
+
+        /* Additional hover animation for the petal with id "front" */
+        .flower:hover #greenfrontright {
+            transform: scaleX(-1) rotate(170deg)translate(25px, 0px);
+            border-radius: 100% 10% 100% 20%;
+        }
+
+        /* Additional hover animation for the petal with id "front" */
+        .flower:hover #mainfront {
+            transform: translate(-20px, 20px);
+            border-radius: 100% 10% 100% 40%;
+        }
+
+        /* Additional hover animation for the petal with id "front" */
+        .flower:hover #mainfrontsides {
+            border-radius: 100% 10% 100% 30%;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+
+            // Provides a random position for each generated tab. 
+            function randomPosition() {
+                var posX = Math.random() * ($(window).width() - 250); // Subtracting the width of the tab
+                var posY = Math.random() * ($(window).height() - 180); // Subtracting the height of the tab
+                return { x: posX, y: posY };
+            }
+
+            var colors = [
+                "linear-gradient(45deg, rgb(248, 232, 241), rgb(222, 43, 105))",
+                "linear-gradient(45deg, rgb(222, 43, 105), rgb(248, 232, 241))",
+                "linear-gradient(45deg, rgb(8, 14, 181), rgb(213, 216, 255))",
+                "linear-gradient(45deg, rgb(199, 213, 123), rgb(242, 254, 223))",
+                "linear-gradient(45deg, rgb(92, 25, 134), rgb(253, 223, 254))"
+            ];
+
+            // Creates new tabs when called upon. 
+            function createFlower(numFlow) {
+                for (var i = 0; i < numFlow; i++) {
+                    var newPos = randomPosition(); // Variable that calls the position function.
+                    var newFlower = $('<div class="flower" id="flower" style="--main-rotate: 0deg;"></div>'); // Variable for the new tab to exist in.
+                    newFlower.css({ top: newPos.y + 'px', left: newPos.x + 'px' });
+
+                    // Creating variables for the other elements in the tab. 
+                    var mainPetalColor = colors[Math.floor(Math.random() * colors.length)]; // Randomly select a color from the 'colors' array
+                    var petal1 = $('<div class="greenPetal petal" style="--green-rotate: -70deg;"></div>');
+                    var petal2 = $('<div class="greenPetal petal" style="--green-rotate: 70deg;"></div>');
+                    var petal3 = $('<div class="mainPetal petal" style="--green-rotate: 0deg; background: ' + mainPetalColor + '"></div>'); // Apply the randomly selected color
+                    var petal4 = $('<div class="greenPetal petal" style="--green-rotate: 0deg;" id="greenfrontleft"></div>');
+                    var petal5 = $('<div class="greenPetal petal" style="--green-rotate: 0deg;" id="greenfrontright"></div>');
+                    var petal6 = $('<div class="mainPetal petal" style="--petal-rotate: 60deg; background: ' + mainPetalColor + '"></div>'); // Apply the randomly selected color
+                    var petal7 = $('<div class="mainPetal petal" style="--petal-rotate: -60deg; background: ' + mainPetalColor + '"></div>'); // Apply the randomly selected color
+                    var petal8 = $('<div class="mainPetal petal" style="--petal-rotate: -30deg; background: ' + mainPetalColor + '"></div>'); // Apply the randomly selected color
+                    var petal9 = $('<div class="mainPetal petal" style="--petal-rotate: 30deg; background: ' + mainPetalColor + '"></div>'); // Apply the randomly selected color
+                    var petal10 = $('<div class="mainPetal petal" style="--petal-rotate: 45deg; background: ' + mainPetalColor + '" id="mainfrontsides"></div>'); // Apply the randomly selected color
+                    var petal11 = $('<div class="mainPetal petal" style="--petal-rotate: -45deg; background: ' + mainPetalColor + '" id="mainfrontsides"></div>'); // Apply the randomly selected color
+                    var petal12 = $('<div class="mainPetal petal" style="--petal-rotate: 0deg; background: ' + mainPetalColor + '" id="mainfront"></div>'); // Apply the randomly selected color
+                    var petal13 = $('<div class="greenPetal petal" style="--green-rotate: 0deg;" id="greenfront"></div>');
+
+                    // Ties the children elements to their parent tab. 
+                    newFlower.append(petal1, petal2, petal3, petal4, petal5, petal6, petal7, petal8, petal9, petal10, petal11, petal12, petal13);
+                    // Ties the tab element to the body, allowing it to be displayed on the screen.
+                    $('body').append(newFlower);
+                }
+            }
+
+            createFlower(30);
+        });
+    </script>
+
+
+</body>
+
+</html>
