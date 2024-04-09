@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 58px;
+            /* Height of the header */
+            left: 0;
+            width: 200px;
+            height: 100%;
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .page {
+            display: flex;
+            flex-direction: row;
+            margin-left: 20%;
+        }
+
+        .navbar {
+            top: 58px;
+            padding-left: 30px;
+            position: fixed;
+            width: 100%;
+            background-color: #0f0f0f;
+            z-index: 1000;
+        }
+
+        .filter {
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid black;
+            white-space: nowrap;
+            /* Prevent text from wrapping */
+            justify-content: space-evenly;
+            background-color: #555;
+            border-radius: 10px;
+            /* To ensure the text doesn't overflow */
+        }
+
+        .filter:hover {
+            background-color: #6a6666;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 105px;
+        }
+
+        .box {
+            width: calc(33.33% - 20px);
+            min-width: 340px;
+            max-width: 400px;
+            background-color: #0f0f0f;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            padding: 20px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            /* Changed flex direction */
+        }
+
+        .box .rounded-box {
+            width: 100%;
+            min-width: 300px;
+            max-width: 400px;
+            height: 80%;
+            min-height: 200px;
+            max-height: 400px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            /* Added margin bottom */
+        }
+
+        .box .info {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .box .circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #666;
+            margin-right: 10px;
+            /* Added margin bottom */
+        }
+
+        .box .text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box .title,
+        .box .channel {
+            margin-top: 5px;
+            /* Added margin top */
+        }
+
+        .box .title {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .box .channel {
+            color: #666;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .box {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .box {
+                width: calc(100% - 20px);
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h3 {
+
+            font-size: 15px;
+            color: white;
+            margin: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="page">
+        <div class="navbar">
+            <div class="filter">
+                <h3>All</h3>
+            </div>
+            <div class="filter">
+                <h3>Assignments</h3>
+            </div>
+            <div class="filter">
+                <h3>Excerises</h3>
+            </div>
+            <div class="filter">
+                <h3>Readings</h3>
+            </div>
+            <div class="filter">
+                <h3>Process Documentation</h3>
+            </div>
+        </div>
+        <div class="container">
+            <a href="projects/interaction/index.html" class=" box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Interaction</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E8/index.html" class=" box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Excerise 8</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E6.2/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Excerise 7</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E3/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Excerise 3</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="projects/poster/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Poster</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E5/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Excerise 5</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="readings/r3/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Reading 3</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E4/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Excerise 4</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E2/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Excerise 2</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="projects/storybook/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Storybook</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E6/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Excerise 6</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E9/index.html" class="box">
+                <div class="rounded-box"></div>
+                <div class="info">
+                    <div class="circle"></div>
+                    <div class="text">
+                        <div class="title">Excerise 9</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+</body>
+
+</html>
