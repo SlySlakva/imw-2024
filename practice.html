@@ -51,17 +51,21 @@
         .filter {
             display: inline-block;
             margin: 10px;
-            border: 1px solid black;
             white-space: nowrap;
             /* Prevent text from wrapping */
             justify-content: space-evenly;
-            background-color: #555;
+            background-color: #282828;
+            color: #f1f1f1;
             border-radius: 10px;
             /* To ensure the text doesn't overflow */
         }
 
         .filter:hover {
-            background-color: #6a6666;
+            background-color: #3f3f3f;
+        }
+
+        .filter.selected {
+            filter: invert(1);
         }
 
         .container {
@@ -84,6 +88,7 @@
             border: none;
             display: flex;
             flex-direction: column;
+
             /* Changed flex direction */
         }
 
@@ -94,22 +99,34 @@
             height: 80%;
             min-height: 200px;
             max-height: 400px;
-            background-color: #ddd;
+            background-color: #e12e4b;
             border-radius: 10px;
             margin-bottom: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            /* Added */
             /* Added margin bottom */
+        }
+
+        .image {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .box .info {
             display: flex;
             flex-direction: row;
+            cursor: pointer;
         }
 
         .box .circle {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background-color: #666;
+            background-color: transparent;
             margin-right: 10px;
             /* Added margin bottom */
         }
@@ -165,137 +182,161 @@
     <div class="sidebar">Sidebar</div>
     <div class="page">
         <div class="navbar">
-            <div class="filter">
+            <div class="filter" onclick="selectFilter(this)">
                 <h3>All</h3>
             </div>
-            <div class="filter">
+            <div class="filter" onclick="selectFilter(this)">
                 <h3>Assignments</h3>
             </div>
-            <div class="filter">
+            <div class="filter" onclick="selectFilter(this)">
                 <h3>Excerises</h3>
             </div>
-            <div class="filter">
+            <div class="filter" onclick="selectFilter(this)">
                 <h3>Readings</h3>
             </div>
-            <div class="filter">
+            <div class="filter" onclick="selectFilter(this)">
                 <h3>Process Documentation</h3>
             </div>
         </div>
         <div class="container">
-            <a href="projects/interaction/index.html" class=" box">
-                <div class="rounded-box"></div>
+            <a href="projects/interaction/index.html" class=" box" id="assignment">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="interaction.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Interaction</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="excerises/E8/index.html" class=" box">
-                <div class="rounded-box"></div>
+            <a href="excerises/E8/index.html" class="box" id="excerise">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise8.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Excerise 8</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="excerises/E6.2/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="excerises/E6.2/index.html" class="box" id="excerise">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise7.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Excerise 7</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="excerises/E3/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="excerises/E3/index.html" class="box" id="excerise">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise3.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Excerise 3</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="projects/poster/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="projects/poster/index.html" class="box" id="assignment">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="poster.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Poster</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="excerises/E5/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="excerises/E5/index.html" class="box" id="excerise">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise5.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Excerise 5</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="readings/r3/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="readings/r3/index.html" class="box" id="reading">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="reading3.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Reading 3</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="excerises/E4/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="excerises/E4/index.html" class="box" id="excerise">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise4.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Excerise 4</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="excerises/E2/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="excerises/E2/index.html" class="box" id="excerise">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise2.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Excerise 2</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="projects/storybook/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="projects/storybook/index.html" class="box" id="assignment">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="storybook.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Storybook</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="excerises/E6/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="excerises/E6/index.html" class="box" id="excerise">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise6.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Excerise 6</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="excerises/E9/index.html" class="box">
-                <div class="rounded-box"></div>
+            <a href="excerises/E9/index.html" class="box" id="excerise">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise9.png" class="image">
+                </div>
                 <div class="info">
-                    <div class="circle"></div>
+                    <img src="channel.png" class="circle">
                     <div class="text">
                         <div class="title">Excerise 9</div>
                         <div class="channel">Sylvia Slakva</div>
@@ -303,6 +344,29 @@
                 </div>
             </a>
         </div>
+
+        <script>
+            function showImage(box) {
+                var image = box.querySelector('.image');
+                image.style.display = "block";
+            }
+
+            function hideImage(box) {
+                var image = box.querySelector('.image');
+                image.style.display = "none";
+            }
+
+            function selectFilter(element) {
+                // Remove 'selected' class from all boxes
+                var boxes = document.querySelectorAll('.filter');
+                boxes.forEach(function (box) {
+                    box.classList.remove('selected');
+                });
+
+                // Add 'selected' class to the clicked box
+                element.classList.add('selected');
+            }
+        </script>
 </body>
 
 </html>
