@@ -4,43 +4,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Layout</title>
+    <title>Homepage</title>
+    <link rel="icon" type="image.png" href="/excerises/E9/test.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #0f0f0f;
-            font-family: Arial, sans-serif;
+            font-family: "Be Vietnam Pro", Arial;
+            font-weight: 400;
+            font-style: normal;
         }
 
-        .header {
+        header {
             position: fixed;
+            display: flex;
+            align-items: center;
+            /* Align items vertically */
             top: 0;
             width: 100%;
-            padding: 20px 0;
-            text-align: center;
-            z-index: 1000;
+            padding: 10px;
+            z-index: 1001;
+            background-color: #0f0f0f;
+        }
+
+        .logo {
+            width: 50px;
+            /* Set the width of the logo */
+            height: auto;
+
+        }
+
+        .searchBar {
+            display: flex;
+            /* Changed display to flex */
+            margin-left: 20%;
+            width: 100%;
+            /* Align items vertically */
+            /* Center items horizontally */
+        }
+
+        .search {
+            padding: 9px;
+            padding-left: 12px;
+            width: 45%;
+            font-size: 17px;
+            border: 1px solid #424040;
+            border-radius: 20px 0px 0px 20px;
+            background-color: #181818;
+            color: white;
+        }
+
+        .searchButton {
+            padding: 9px;
+            width: 5%;
+            min-width: 40px;
+            background-color: #232020;
+            border: 1px solid #424040;
+            font-size: 17px;
+            cursor: pointer;
+            border-radius: 0 20px 20px 0;
+            color: #ffffff;
+        }
+
+        .fa-search {
+            color: #ffffff;
+        }
+
+        .bell-container {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            right: 100px;
+            margin: 10px;
+            background-color: transparent;
+            border: transparent;
+            cursor: pointer;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .bell-container:hover {
+            background-color: rgb(32, 35, 35);
+        }
+
+        .fa-bell {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .notification {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            animation: expand 1s ease-out forwards;
+        }
+
+        @keyframes expand {
+            0% {
+                transform: scale(0);
+            }
+
+            80% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .notification-box {
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 50%;
+            width: 700%;
+            padding: 25px;
+            height: 500%;
+            transform: translateX(-90%);
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            /* Ensure it's on top of other content */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .profile {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            right: 40px;
+            margin: 10px;
+            background-color: red;
+            border: transparent;
+            cursor: pointer;
+            border-radius: 20px;
         }
 
         .sidebar {
             position: fixed;
-            top: 58px;
-            /* Height of the header */
+            top: 80px;
             left: 0;
-            width: 200px;
+            width: 14%;
+            min-width: 50px;
             height: 100%;
-            padding: 20px;
+            padding: 8px;
             z-index: 100;
+            background-color: #0f0f0f;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #555;
+            border-radius: 10px;
+        }
+
+        /* Media Query to hide text on smaller screens */
+        @media screen and (max-width: 600px) {
+            .sidebar ul li span {
+                display: none;
+            }
+        }
+
+        .icon {
+            width: 30px;
+            margin-right: 10px;
         }
 
         .page {
             display: flex;
             flex-direction: row;
-            margin-left: 20%;
+            margin-left: 17%;
         }
 
         .navbar {
-            top: 58px;
+            top: 80px;
             padding-left: 30px;
             position: fixed;
             width: 100%;
@@ -145,7 +313,6 @@
         .box .title {
             font-weight: bold;
             color: white;
-            margin-bottom: 5px;
         }
 
         .box .channel {
@@ -165,21 +332,127 @@
         }
 
         a {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 100;
+            color: white;
+            font-size: 14px;
             text-decoration: none;
         }
 
-        h3 {
+        h1 {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 800;
+            color: white;
+            font-size: 16px;
+            padding: 0px;
+            padding-left: 5px;
+        }
 
+        h2 {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 400;
+            color: white;
+            font-size: 16px;
+            padding-left: 5px;
+        }
+
+        h3 {
             font-size: 15px;
             color: white;
             margin: 7px;
+        }
+
+        .be-vietnam pro-thin {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        .be-vietnam pro-extralight {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        .be-vietnam pro-light {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .be-vietnam pro-regular {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .be-vietnam pro-medium {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .be-vietnam pro-semibold {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .be-vietnam pro-bold {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .be-vietnam pro-extrabold {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .be-vietnam pro-black {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 900;
+            font-style: normal;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">Header</div>
-    <div class="sidebar">Sidebar</div>
+    <header>
+        <img src="lines.png" alt="Lines Image" class="logo" style="padding-right: 10px;">
+        <img src="logohead.png" alt="Logo Image" class="logo">
+        <h1>Sylvia Slakva</h1>
+        <div class="searchBar">
+            <input type="text" id="searchInput" class="search" placeholder="Search...">
+            <button onclick="search()" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="bell-container">
+            <i class="fa fa-bell"></i>
+            <div class="notification"></div>
+            <div class="notification-box hidden">
+                <a href="projects/interaction/index.html" class="assignment-link">Sylvia Slakva uploaded a new
+                    assignment: Interaction</a>
+            </div>
+        </div>
+        <div class="profile"></div>
+    </header>
+    <div class="sidebar">
+        <h2>Subscriptions</h2>
+        <ul>
+            <li><a href="https://www.w3schools.com/" target="_blank"><img class="icon" src="w3school.png"
+                        alt="Icon 1"><span>W3 Schools</span></a></li>
+            <li><a href="https://developer.mozilla.org/" target="_blank"><img class="icon" src="mdn.webp"
+                        alt="Icon 2"><span>MDN Web Docs</span></a></li>
+            <li><a href="https://openai.com/chatgpt/" target="_blank"><img class="icon" src="chatgpt.png"
+                        alt="Icon 3"><span>ChatGPT</span></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank"><img class="icon" src="youtube.webp"
+                        alt="Icon 3"><span>Youtube</span></a></li>
+            <!-- Add more resources as needed -->
+        </ul>
+    </div>
     <div class="page">
         <div class="navbar">
             <div class="filter" onclick="selectFilter(this)">
@@ -199,7 +472,7 @@
             </div>
         </div>
         <div class="container">
-            <a href="projects/interaction/index.html" class=" box" id="assignment">
+            <a href="projects/interaction/index.html" class=" box" id="Assignments">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="interaction.png" class="image">
                 </div>
@@ -211,7 +484,7 @@
                     </div>
                 </div>
             </a>
-            <a href="excerises/E8/index.html" class="box" id="excerise">
+            <a href="excerises/E8/index.html" class="box" id="Excerises">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="excerise8.png" class="image">
                 </div>
@@ -223,7 +496,7 @@
                     </div>
                 </div>
             </a>
-            <a href="excerises/E6.2/index.html" class="box" id="excerise">
+            <a href="excerises/E6.2/index.html" class="box" id="Excerises">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="excerise7.png" class="image">
                 </div>
@@ -235,7 +508,19 @@
                     </div>
                 </div>
             </a>
-            <a href="excerises/E3/index.html" class="box" id="excerise">
+            <a href="process.html" class="box" id="processDocumentation">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="indexprocess.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Index: Process</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E3/index.html" class="box" id="Excerises">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="excerise3.png" class="image">
                 </div>
@@ -247,7 +532,7 @@
                     </div>
                 </div>
             </a>
-            <a href="projects/poster/index.html" class="box" id="assignment">
+            <a href="projects/poster/index.html" class="box" id="Assignments">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="poster.png" class="image">
                 </div>
@@ -259,19 +544,19 @@
                     </div>
                 </div>
             </a>
-            <a href="excerises/E5/index.html" class="box" id="excerise">
+            <a href="projects/poster 2/process.html" class="box" id="processDocumentation">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
-                    <img src="excerise5.png" class="image">
+                    <img src="posterprocess.png" class="image">
                 </div>
                 <div class="info">
                     <img src="channel.png" class="circle">
                     <div class="text">
-                        <div class="title">Excerise 5</div>
+                        <div class="title">Poster: Process</div>
                         <div class="channel">Sylvia Slakva</div>
                     </div>
                 </div>
             </a>
-            <a href="readings/r3/index.html" class="box" id="reading">
+            <a href="readings/r3/index.html" class="box" id="Readings">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="reading3.png" class="image">
                 </div>
@@ -283,7 +568,7 @@
                     </div>
                 </div>
             </a>
-            <a href="excerises/E4/index.html" class="box" id="excerise">
+            <a href="excerises/E4/index.html" class="box" id="Excerises">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="excerise4.png" class="image">
                 </div>
@@ -295,7 +580,31 @@
                     </div>
                 </div>
             </a>
-            <a href="excerises/E2/index.html" class="box" id="excerise">
+            <a href="projects/interaction/process.html" class="box" id="processDocumentation">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="interactionprocess.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Interaction: Process</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="readings/r2/index.html" class="box" id="Readings">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="reading2.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Reading 1</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E2/index.html" class="box" id="Excerises">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="excerise2.png" class="image">
                 </div>
@@ -307,7 +616,7 @@
                     </div>
                 </div>
             </a>
-            <a href="projects/storybook/index.html" class="box" id="assignment">
+            <a href="projects/storybook/index.html" class="box" id="Assignments">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="storybook.png" class="image">
                 </div>
@@ -319,7 +628,7 @@
                     </div>
                 </div>
             </a>
-            <a href="excerises/E6/index.html" class="box" id="excerise">
+            <a href="excerises/E6/index.html" class="box" id="Excerises">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="excerise6.png" class="image">
                 </div>
@@ -331,7 +640,7 @@
                     </div>
                 </div>
             </a>
-            <a href="excerises/E9/index.html" class="box" id="excerise">
+            <a href="excerises/E9/index.html" class="box" id="Excerises">
                 <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
                     <img src="excerise9.png" class="image">
                 </div>
@@ -343,30 +652,95 @@
                     </div>
                 </div>
             </a>
+            <a href="excerises/E5/index.html" class="box" id="Excerises">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="excerise5.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 5</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="projects/storybook 2/process.html" class="box" id="processDocumentation">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="storyprocess.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Storybook: Process</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="readings/r2/index.html" class="box" id="Readings">
+                <div class="rounded-box" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                    <img src="reading2.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Reading 2</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
         </div>
+    </div>
 
-        <script>
-            function showImage(box) {
-                var image = box.querySelector('.image');
-                image.style.display = "block";
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script>
+        function showImage(box) {
+            var image = box.querySelector('.image');
+            image.style.display = "block";
+        }
+
+        function hideImage(box) {
+            var image = box.querySelector('.image');
+            image.style.display = "none";
+        }
+
+        function selectFilter(element) {
+            // Remove 'selected' class from all boxes
+            var boxes = document.querySelectorAll('.filter');
+            boxes.forEach(function (box) {
+                box.classList.remove('selected');
+            });
+
+            // Add 'selected' class to the clicked box
+            element.classList.add('selected');
+        }
+        function search() {
+            var input, filter, container, boxes, i, title, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            container = document.querySelector('.container');
+            boxes = container.querySelectorAll('.box');
+
+            for (i = 0; i < boxes.length; i++) {
+                title = boxes[i].querySelector('.title');
+                txtValue = title.textContent || title.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    boxes[i].style.display = "";
+                } else {
+                    boxes[i].style.display = "none";
+                }
             }
+        }
 
-            function hideImage(box) {
-                var image = box.querySelector('.image');
-                image.style.display = "none";
-            }
+        document.addEventListener('DOMContentLoaded', function () {
+            const bellIcon = document.querySelector('.bell-container');
+            const notificationBox = bellIcon.querySelector('.notification-box');
 
-            function selectFilter(element) {
-                // Remove 'selected' class from all boxes
-                var boxes = document.querySelectorAll('.filter');
-                boxes.forEach(function (box) {
-                    box.classList.remove('selected');
-                });
-
-                // Add 'selected' class to the clicked box
-                element.classList.add('selected');
-            }
-        </script>
+            bellIcon.addEventListener('click', function () {
+                notificationBox.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 
 </html>
