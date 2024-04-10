@@ -296,6 +296,10 @@ header {
     display: flex;
     /*change to column to stack thumbnail on top of the info container*/
     flex-direction: column;
+    flex-grow: 1;
+    /* Allow boxes to grow */
+    flex-basis: 0;
+    /* Distribute remaining space equally */
 }
 
 /*thumbnail is inside the box.*/

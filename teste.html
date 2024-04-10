@@ -4,68 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filter System</title>
+    <title>Flexbox Example</title>
     <style>
-        .container {
+        .flex-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
+            justify-content: space-between;
+            /* Adjust alignment as per requirement */
+            gap: 10px;
+            /* Adjust gap between flex items */
         }
 
-        .box {
-            width: 50px;
-            height: 50px;
-            background-color: lightblue;
-            margin: 5px;
-            cursor: pointer;
+        .flex-item {
+            width: calc(100% - 10px);
+            /* Adjust width of flex items for smallest screens */
+            background-color: #ccc;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        .circle {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: pink;
-            margin: 5px;
+        /* CSS for smallest screens (1 box per row) */
+        @media only screen and (max-width: 480px) {
+            .flex-item {
+                width: 100%;
+                /* Each box takes up the full width */
+            }
+        }
+
+        /* CSS for screens between 481px and 768px (2 boxes per row) */
+        @media only screen and (min-width: 481px) and (max-width: 768px) {
+            .flex-item {
+                width: calc(50% - 10px);
+                /* Two boxes per row with some gap */
+            }
+        }
+
+        /* CSS for screens larger than 768px (3 boxes per row) */
+        @media only screen and (min-width: 769px) {
+            .flex-item {
+                width: calc(33.33% - 10px);
+                /* Three boxes per row with some gap */
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="filter-boxes">
-        <div class="box" id="box1"></div>
-        <div class="box" id="box2"></div>
-        <div class="box" id="box3"></div>
-        <!-- Add more boxes as needed -->
+    <div class="flex-container">
+        <div class="flex-item">Box 1</div>
+        <div class="flex-item">Box 2</div>
+        <div class="flex-item">Box 3</div>
+        <div class="flex-item">Box 4</div>
+        <div class="flex-item">Box 5</div>
+        <div class="flex-item">Box 6</div>
+        <div class="flex-item">Box 7</div>
+        <div class="flex-item">Box 8</div>
+        <div class="flex-item">Box 9</div>
+        <div class="flex-item">Box 10</div>
+        <!-- Add more flex items as needed -->
     </div>
-
-    <div class="container">
-        <div class="circle" id="circle1"></div>
-        <div class="circle" id="circle2"></div>
-        <div class="circle" id="circle3"></div>
-        <!-- Add more circles as needed -->
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const boxes = document.querySelectorAll('.box');
-            const circles = document.querySelectorAll('.circle');
-
-            boxes.forEach(box => {
-                box.addEventListener('click', function () {
-                    const id = this.id.replace('box', ''); // Remove 'box' from id to match circle id
-                    circles.forEach(circle => {
-                        if (circle.id === 'circle' + id) {
-                            circle.style.display = 'block';
-                        } else {
-                            circle.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 
 </body>
 
