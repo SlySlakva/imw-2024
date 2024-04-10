@@ -29,8 +29,9 @@ header {
 /*contains the search bar and button.*/
 .searchBar {
     display: flex;
-    margin-left: 20%;
+    justify-content: center;
     width: 100%;
+    padding-right: 120px;
 }
 
 /*the search function*/
@@ -39,8 +40,6 @@ header {
     padding: 9px;
     /*controls the length of the bar.*/
     width: 45%;
-    /*moves the text further left*/
-    padding-left: 12px;
     /*font size and color.*/
     font-size: 17px;
     color: white;
@@ -143,9 +142,7 @@ header {
     left: 50%;
     transform: translateX(-90%);
     /*design.*/
-    width: 700%;
-    padding: 25px;
-    height: 500%;
+    width: 600%;
     background-color: #1e1e1e;
     padding: 10px;
     border-radius: 5px;
@@ -153,12 +150,26 @@ header {
     /*Makes sure the box appears over navigation bar*/
     z-index: 1001;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 
 }
 
 /* Hides content*/
 .hidden {
     display: none;
+}
+
+.assignment-link {
+    width: 90%;
+    height: 20%;
+    padding: 10px;
+}
+
+.assignment-link:hover {
+    display: flex;
+    background-color: #303030;
+    border-radius: 5px;
 }
 
 /* Guest Profile Icon*/
@@ -268,58 +279,58 @@ header {
     filter: invert(1);
 }
 
-/*contains all the video/assignments*/
 .container {
-    /*Flex display to organize everything into rows*/
     display: flex;
     flex-wrap: wrap;
-    /*spaces out evenly*/
     justify-content: space-between;
-    padding: 20px;
-    /*moves it below the header and nav bar*/
-    margin-top: 105px;
+    /* Adjust gap between flex items */
+    gap: 10px;
+    margin-top: 140px;
+
 }
 
-/*contains a video/assignment*/
 .box {
-    /*size is based on window length*/
-    width: calc(33.33% - 20px);
-    /*min and max widths to limit size change*/
-    min-width: 340px;
-    max-width: 400px;
-    box-sizing: border-box;
-    /*design*/
-    padding: 20px;
-    border: none;
+    /* width: calc(100% - 10px); */
     background-color: #0f0f0f;
-    /*display*/
+    padding: 10px;
+    box-sizing: border-box;
     display: flex;
-    /*change to column to stack thumbnail on top of the info container*/
     flex-direction: column;
-    flex-grow: 1;
-    /* Allow boxes to grow */
-    flex-basis: 0;
-    /* Distribute remaining space equally */
+    /* text-align: center; */
 }
 
-/*thumbnail is inside the box.*/
-.box .thumbnail {
-    position: relative;
-    /*size is based on window length*/
+/* CSS for smallest screens (1 box per row) */
+@media only screen and (max-width: 700px) {
+    .box {
+        width: 100%;
+        /* Each box takes up the full width */
+    }
+}
+
+/* CSS for screens between 481px and 768px (2 boxes per row) */
+@media only screen and (min-width: 701px) and (max-width: 1200px) {
+    .box {
+        width: calc(50% - 10px);
+        /* Two boxes per row with some gap */
+    }
+}
+
+/* CSS for screens larger than 768px (3 boxes per row) */
+@media only screen and (min-width: 1201px) {
+    .box {
+        width: calc(33.33% - 10px);
+        /* Three boxes per row with some gap */
+    }
+}
+
+.thumbnail {
     width: 100%;
-    min-width: 300px;
-    max-width: 400px;
-    height: 80%;
-    min-height: 200px;
-    max-height: 400px;
-    /*design.*/
+    /* padding: 30%; */
     background-color: #e12e4b;
     border-radius: 10px;
     margin-bottom: 10px;
-    cursor: pointer;
 }
 
-/*image.*/
 .image {
     display: block;
     /* display: none; */
@@ -336,16 +347,12 @@ header {
     opacity: 0.5;
 }
 
-/*info section contains the channel image and text.*/
-.box .info {
-    /*changes display to row to spread out the channel image and text.*/
+.info {
     display: flex;
     flex-direction: row;
-    cursor: pointer;
 }
 
-/*placeholder for the channel icon.*/
-.box .circle {
+.circle {
     /*position and design.*/
     width: 50px;
     height: 50px;
@@ -354,37 +361,14 @@ header {
     margin-right: 10px;
 }
 
-/*container for the channel name and title.*/
-.box .text {
-    /*stacks the text in a column*/
-    display: flex;
-    flex-direction: column;
-}
-
-/*title*/
-.box .title {
+.title {
     font-weight: bold;
     color: white;
     margin-top: 5px;
 }
 
-/*channel name*/
-.box .channel {
+.channel {
     color: #666;
-    margin-top: 5px;
-}
-
-/*adjusts the amount of assignments on screen.*/
-@media only screen and (max-width: 768px) {
-    .box {
-        width: calc(50% - 20px);
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .box {
-        width: calc(100% - 20px);
-    }
 }
 
 a {
