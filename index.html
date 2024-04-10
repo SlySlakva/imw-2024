@@ -4,47 +4,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Homepage</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Homepage</title>
     <link rel="icon" type="image.png" href="/excerises/E9/test.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- I based my homepage off the Youtube Homepage!. -->
+    <!-- The header contains the logo, search bar, notification and guest profile. -->
     <header>
+        <img src="lines.png" alt="Lines Image" class="logo" style="padding-right: 10px; width:40px;">
+        <a href="https://www.sylviaslakva.com"><img src="logohead.png" alt="Logo Image" class="logo"></a>
+        <a href="https://www.sylviaslakva.com">
+            <h1>Sylvia Slakva</h1>
+        </a>
         <div class="searchBar">
-            <input type="text" class="search" placeholder="Search...">
-            <button type="submit" class="searchButton">
+            <input type="text" id="searchInput" class="search" placeholder="Search...">
+            <button onclick="search()" class="searchButton">
                 <i class="fa fa-search"></i>
             </button>
         </div>
-
-        <button type="submit" class="bell-container">
-            <i class="fa-regular fa-bell""></i>
-            <i class=" fas fa-bell"></i>
-        </button>
-
-        <button type="submit" class="profile">
-        </button>
+        <div class="bell-container">
+            <i class="fa fa-bell"></i>
+            <div class="notification"></div>
+            <div class="notification-box hidden">
+                <a href="projects/interaction/index.html" class="assignment-link">Sylvia Slakva uploaded a new
+                    assignment: Interaction</a>
+            </div>
+        </div>
+        <div class="profile"></div>
     </header>
 
-    <main>
-        <section class="sidebar">
-
-        </section>
-
-        <section class="filter">
-
-        </section>
-
-        <section class="content">
-
-        </section>
-    </main>
-
+    <!-- The sidebar contains all the resources I used this semester. Scaling the window down will remove the text for icons only. -->
+    <div class="sidebar">
+        <h2>Subscriptions</h2>
+        <ul>
+            <li><a href="https://www.w3schools.com/" target="_blank"><img class="icon" src="w3school.png"
+                        alt="Icon 1"><span>W3 Schools</span></a></li>
+            <li><a href="https://developer.mozilla.org/" target="_blank"><img class="icon" src="mdn.webp"
+                        alt="Icon 2"><span>MDN Web Docs</span></a></li>
+            <li><a href="https://openai.com/chatgpt/" target="_blank"><img class="icon" src="chatgpt.png"
+                        alt="Icon 3"><span>ChatGPT</span></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank"><img class="icon" src="youtube.webp"
+                        alt="Icon 3"><span>Youtube</span></a></li>
+            <li><a href="https://fonts.google.com/" target="_blank"><img class="icon" src="googlefont.webp"
+                        alt="Icon 3"><span>Google Fonts</span></a></li>
+            <li><a href="https://fontawesome.com/" target="_blank"><img class="icon" src="fontawesome.png"
+                        alt="Icon 3"><span>Font Awesome</span></a></li>
+        </ul>
+    </div>
+    <!-- This contains the main content of the page. -->
+    <div class="page">
+        <!-- The navigation bar allows the user to filter through the work I did this semester. -->
+        <div class="navbar">
+            <div class="filter" data-id="Assignments">
+                <h3>Assignments</h3>
+            </div>
+            <div class="filter" data-id="Excerises">
+                <h3>Excerises</h3>
+            </div>
+            <div class="filter" data-id="Readings">
+                <h3>Readings</h3>
+            </div>
+            <div class="filter" data-id="processDocumentation">
+                <h3>Process Documentation</h3>
+            </div>
+        </div>
+        <!-- This displays the "videos" or work I did this semester.-->
+        <!-- Each thumbnail includes a link to the assignment, a hover feature mimicking youtube's autoplay, a channel profile, a title, and a channel name. -->
+        <!-- The layout also adjusts according to the window space provided.-->
+        <div class="container">
+            <a href="projects/interaction/index.html" class="box Assignments">
+                <div class="thumbnail">
+                    <img src="interaction.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Interaction</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E8/index.html" class="box Excerises">
+                <div class="thumbnail">
+                    <img src="excerise8.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 8</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E6.2/index.html" class="box Excerises">
+                <div class="thumbnail">
+                    <img src="excerise7.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 7</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="process.html" class="box processDocumentation">
+                <div class="thumbnail">
+                    <img src="indexprocess.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Index: Process</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E3/index.html" class="box Excerises">
+                <div class="thumbnail">
+                    <img src="excerise3.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 3</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="projects/poster/index.html" class="box Assignments">
+                <div class="thumbnail">
+                    <img src="poster.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Poster</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="projects/poster 2/process.html" class="box processDocumentation">
+                <div class="thumbnail">
+                    <img src="posterprocess.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Poster: Process</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="readings/r3/index.html" class="box Readings">
+                <div class="thumbnail">
+                    <img src="reading3.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Reading 3</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E4/index.html" class="box Excerises">
+                <div class="thumbnail">
+                    <img src="excerise4.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 4</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="projects/interaction/process.html" class="box processDocumentation">
+                <div class="thumbnail">
+                    <img src="interactionprocess.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Interaction: Process</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="readings/r2/index.html" class="box Readings">
+                <div class="thumbnail">
+                    <img src="reading2.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Reading 1</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E2/index.html" class="box Excerises">
+                <div class="thumbnail">
+                    <img src="excerise2.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 2</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="projects/storybook/index.html" class="box Assignments">
+                <div class="thumbnail">
+                    <img src="storybook.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Storybook</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E6/index.html" class="box Excerises">
+                <div class="thumbnail">
+                    <img src="excerise6.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 6</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E9/index.html" class="box Excerises">
+                <div class="thumbnail">
+                    <img src="excerise9.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 9</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="excerises/E5/index.html" class="box Excerises">
+                <div class="thumbnail">
+                    <img src="excerise5.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Excerise 5</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="projects/storybook 2/process.html" class="box processDocumentation">
+                <div class="thumbnail">
+                    <img src="storyprocess.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Storybook: Process</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+            <a href="readings/r2/index.html" class="box Readings">
+                <div class="thumbnail">
+                    <img src="reading2.png" class="image">
+                </div>
+                <div class="info">
+                    <img src="channel.png" class="circle">
+                    <div class="text">
+                        <div class="title">Reading 2</div>
+                        <div class="channel">Sylvia Slakva</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

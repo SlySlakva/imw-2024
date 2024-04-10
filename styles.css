@@ -1,102 +1,438 @@
-/* Resetting default margin and padding */
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #181818;
-    /* Dark background */
-    color: #fff;
-    /* Light text */
+    background-color: #0f0f0f;
+    font-family: "Be Vietnam Pro", Arial;
+    font-weight: 400;
 }
 
 header {
+    /*keeps the header fixed to the top*/
+    position: fixed;
+    /*organizes the children elements into one row*/
     display: flex;
-    margin: 10px;
+    align-items: center;
+    /*extends the width across the screen*/
     width: 100%;
-    top: 0;
-    z-index: 1000;
-    /* Ensure header is on top of other content */
+    padding: 10px;
+    /*keeps the header above everything else. Important for keeping the notification display on top.*/
+    z-index: 1001;
+    background-color: #0f0f0f;
 }
 
+/*controls the logos at the top*/
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+/*contains the search bar and button.*/
 .searchBar {
-    margin: auto;
-    max-width: 500px;
-
+    display: flex;
+    margin-left: 20%;
+    width: 100%;
 }
 
+/*the search function*/
 .search {
-    padding: 10px;
+    /*determines how large the bar is.*/
+    padding: 9px;
+    /*controls the length of the bar.*/
+    width: 45%;
+    /*moves the text further left*/
+    padding-left: 12px;
+    /*font size and color.*/
     font-size: 17px;
+    color: white;
+    /*search bar design.*/
     border: 1px solid #424040;
-    float: left;
-    width: 80%;
-    background-color: #181818;
     border-radius: 20px 0px 0px 20px;
+    background-color: #181818;
 }
 
+/*the search button*/
 .searchButton {
-    float: left;
-    width: 20%;
-    padding: 10px;
+    /*controls the length and size of the button.*/
+    padding: 9px;
+    width: 5%;
+    /*min width when resizing the window.*/
+    min-width: 40px;
+    /*font size and color.*/
+    font-size: 17px;
+    color: #ffffff;
+    /*search button design.*/
     background-color: #232020;
     border: 1px solid #424040;
-    font-size: 17px;
-    border-left: none;
-    cursor: pointer;
     border-radius: 0 20px 20px 0;
+    cursor: pointer;
+
 }
 
-.fa-search {
+/*determines the colors of the font awesome icons.*/
+.fa-search,
+.fa-bell {
     color: #ffffff;
 }
 
+/*bell container.*/
 .bell-container {
+    /*position and size.*/
     position: absolute;
     width: 40px;
     height: 40px;
-    right: 80px;
+    right: 100px;
     margin: 10px;
+    /*container design.*/
     background-color: transparent;
     border: transparent;
     cursor: pointer;
     border-radius: 20px;
+    /*display to align the bell and animation.*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
+/*bell container changes color when user hovers over element.*/
 .bell-container:hover {
     background-color: rgb(32, 35, 35);
 }
 
-.profile {
+/*sizes up the bell icon.*/
+.fa-bell {
+    font-size: 20px;
+}
+
+/*nofication animation - it's a red circle that expands briefly.*/
+.notification {
+    /*position.*/
+    width: 15px;
+    height: 15px;
+    /*design.*/
+    border-radius: 50%;
+    background-color: red;
+    /*display.*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*animation.*/
+    animation: expand 1s ease-out forwards;
+}
+
+/*makes the red circle expand before settling.*/
+@keyframes expand {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*nofication display that appears when the user clicks the bell*/
+.notification-box {
+    /*position*/
     position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-90%);
+    /*design.*/
+    width: 700%;
+    padding: 25px;
+    height: 500%;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /*Makes sure the box appears over navigation bar*/
+    z-index: 1001;
+    cursor: pointer;
+
+}
+
+/* Hides content*/
+.hidden {
+    display: none;
+}
+
+/* Guest Profile Icon*/
+.profile {
+    /* Position */
+    position: absolute;
+    right: 40px;
+    margin: 10px;
+    /*Design*/
     width: 40px;
     height: 40px;
-    right: 10px;
-    margin: 10px;
-    background-color: red;
+    background-color: #e12e4b;
     border: transparent;
-    cursor: pointer;
     border-radius: 20px;
+    cursor: pointer;
 }
 
-.bell {
-    justify-content: center;
-    text-align: center;
-    color: #ffffff;
-}
-
-main {
-    display: flex;
-    height: 100vh;
-}
-
+/*Sidebar*/
 .sidebar {
-    flex: 0 0 250px;
-    padding-top: 20px;
-    overflow-y: auto;
-    background-color: rgb(101, 174, 180);
-    /* Add vertical scrollbar */
+    /* Position */
+    position: fixed;
+    top: 80px;
+    left: 0;
+    /*Design*/
+    width: 14%;
+    min-width: 50px;
+    height: 100%;
+    padding: 8px;
+    background-color: #0f0f0f;
+}
+
+/*Sidebar List*/
+.sidebar ul {
+    /*Removes spacing and list*/
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    /*Text Design*/
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*Hover effect*/
+.sidebar ul li:hover {
+    /*When user hover, change background and border radius.*/
+    background-color: #555;
+    border-radius: 10px;
+}
+
+/* Hides Subscription list when the window becomes smaller*/
+@media screen and (max-width: 600px) {
+    .sidebar ul li span {
+        display: none;
+    }
+}
+
+/*Subscription Icons*/
+.icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/*Main content page*/
+.page {
+    display: flex;
+    /*oragnizes content into rows*/
+    flex-direction: row;
+    /*shifts nav and container to the right of the sidebar*/
+    margin-left: 17%;
+}
+
+/*Nav bar*/
+.navbar {
+    /*Position, size, color*/
+    position: fixed;
+    top: 80px;
+    padding-left: 30px;
+    width: 100%;
+    background-color: #0f0f0f;
+    /*Ensures nav bar is above everything else.*/
+    z-index: 1000;
+}
+
+/*Filter boxes*/
+.filter {
+    /*organizes filters into a row*/
+    display: inline-block;
+    white-space: nowrap;
+    margin: 10px;
+    /*design*/
+    background-color: #282828;
+    color: #f1f1f1;
+    border-radius: 10px;
+}
+
+/*changes color upon hover*/
+.filter:hover {
+    background-color: #3f3f3f;
+}
+
+/*inverts color upon selection*/
+.filter.selected {
+    filter: invert(1);
+}
+
+/*contains all the video/assignments*/
+.container {
+    /*Flex display to organize everything into rows*/
+    display: flex;
+    flex-wrap: wrap;
+    /*spaces out evenly*/
+    justify-content: space-between;
+    padding: 20px;
+    /*moves it below the header and nav bar*/
+    margin-top: 105px;
+}
+
+/*contains a video/assignment*/
+.box {
+    /*size is based on window length*/
+    width: calc(33.33% - 20px);
+    /*min and max widths to limit size change*/
+    min-width: 340px;
+    max-width: 400px;
+    box-sizing: border-box;
+    /*design*/
+    padding: 20px;
+    border: none;
+    background-color: #0f0f0f;
+    /*display*/
+    display: flex;
+    /*change to column to stack thumbnail on top of the info container*/
+    flex-direction: column;
+}
+
+/*thumbnail is inside the box.*/
+.box .thumbnail {
+    position: relative;
+    /*size is based on window length*/
+    width: 100%;
+    min-width: 300px;
+    max-width: 400px;
+    height: 80%;
+    min-height: 200px;
+    max-height: 400px;
+    /*design.*/
+    background-color: #e12e4b;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/*image.*/
+.image {
+    display: block;
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    /*fit the image inside the thumbnail.*/
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail:hover .image {
+    opacity: 0.5;
+}
+
+/*info section contains the channel image and text.*/
+.box .info {
+    /*changes display to row to spread out the channel image and text.*/
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+/*placeholder for the channel icon.*/
+.box .circle {
+    /*position and design.*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+/*container for the channel name and title.*/
+.box .text {
+    /*stacks the text in a column*/
+    display: flex;
+    flex-direction: column;
+}
+
+/*title*/
+.box .title {
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+}
+
+/*channel name*/
+.box .channel {
+    color: #666;
+    margin-top: 5px;
+}
+
+/*adjusts the amount of assignments on screen.*/
+@media only screen and (max-width: 768px) {
+    .box {
+        width: calc(50% - 20px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .box {
+        width: calc(100% - 20px);
+    }
+}
+
+a {
+    /*text design for the links*/
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 100;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+h1 {
+    /*text design for header 1 (the title in the top left)*/
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 800;
+    color: white;
+    font-size: 16px;
+    padding: 0px;
+    padding-left: 5px;
+}
+
+h2 {
+    /*text design for header 2 (subscription)*/
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+h3 {
+    /*text design for header 2 (filters)*/
+    font-size: 15px;
+    color: white;
+    margin: 7px;
+}
+
+/*Font weights*/
+.be-vietnam pro-thin {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.be-vietnam pro-regular {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.be-vietnam pro-extrabold {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 800;
+    font-style: normal;
 }

@@ -4,49 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expanding Circle Animation</title>
+    <title>Filter System</title>
     <style>
-        body {
+        .container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
+            margin-top: 20px;
         }
 
-        .notification {
-            width: 100px;
-            height: 100px;
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: lightblue;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            background-color: red;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 48px;
-            color: white;
-            animation: expand 1s ease-out forwards;
-        }
-
-        @keyframes expand {
-            0% {
-                transform: scale(0);
-            }
-
-            80% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
-            }
+            background-color: pink;
+            margin: 5px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="circle">1</div>
+    <div class="filter-boxes">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <!-- Add more boxes as needed -->
+    </div>
+
+    <div class="container">
+        <div class="circle" id="circle1"></div>
+        <div class="circle" id="circle2"></div>
+        <div class="circle" id="circle3"></div>
+        <!-- Add more circles as needed -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const boxes = document.querySelectorAll('.box');
+            const circles = document.querySelectorAll('.circle');
+
+            boxes.forEach(box => {
+                box.addEventListener('click', function () {
+                    const id = this.id.replace('box', ''); // Remove 'box' from id to match circle id
+                    circles.forEach(circle => {
+                        if (circle.id === 'circle' + id) {
+                            circle.style.display = 'block';
+                        } else {
+                            circle.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 
