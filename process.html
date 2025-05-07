@@ -49,8 +49,7 @@
             bar were fixed elements while scrolling. The navigation bar and content area were apart of a flex grid,
             moving together when resizing the window. The side bar would minimize when reaching a certain threshold.</p>
         <p>Trying to replicate this took a while. There was sometimes issues as having elements like the header or
-            general page as a flex box would cause conflict with the fixed element effect. I relied on ChatGPT to debug
-            these issues since I'm not that great at formatting elements.</p>
+            general page as a flex box would cause conflict with the fixed element effect..</p>
         <p>I also revisited the whole responsive design lesson during this process. Adding a margin couldn't provide an
             easy fix for overlapping elements as resizing the window would inevitably create the same issue.</p>
         <img src="3.png" alt="General Format Issues">
@@ -104,7 +103,7 @@
 
     <section>
         <h2>Step 5: Navigation Bar</h2>
-        <p>This was also a bit difficult. I had to use ChatGPT to create a simplified version to handle this. I created
+        <p>This was also a bit difficult. I created
             a row of boxes that would serve as a filter. Each of these filters had a data-id, which would search for any
             circles that had the matching class name. Using this example I applied the same logic. I created several
             boxes and gave each of them a different name and data-id (ex. assignments, process, etc). I then went
@@ -122,8 +121,7 @@
         </p>
         <img src="9.png" alt="Notification Display">
         <p>There was a brief issue with the display order. The notification box would appear underneath the navigation
-            bar despite making the order higher. Debugging with chatGPT helped me realize that the parent header was
-            lower than the navigation bar which is why the notification box was also underneath the navigation bar. </p>
+            bar despite making the order higher. </p>
     </section>
     <section>
         <h2>Step 6: Other Details</h2>
